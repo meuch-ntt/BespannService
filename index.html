@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Besaitung München</title>
+        <link rel="icon" type="image/x-icon" href="/Assets/Bespannung.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+            body, html {
+            height: 100%;
+            line-height: 1.8;
+            }
+
+            /* Full height image header */
+            .bgimg-1 {
+                background-position: center;
+                background-size: cover;
+                background-image: url("Assets/Tennis1.JPEG");
+                min-height: 100%;
+                transition: background-image 1s ease-in-out;
+            }
+
+            .w3-bar .w3-button {
+            padding: 16px;
+            }
+
+            .inline-block{
+                display: inline-block;
+                margin-left: 50px;
+            }
+
+
+            .card-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: stretch; /* Ensure all cards stretch to the same height */
+                flex-wrap: wrap;
+                margin: 0 auto;
+            }
+
+            .card-item {
+                flex: 1;
+                margin: 0 10px;
+                max-width: 300px; /* Set max width to keep cards the same size */
+                display: flex;
+                flex-direction: column;
+            }
+
+            .w3-card {
+                height: 100%; /* Make the card fill its container */
+                display: flex;
+                flex-direction: column;
+            }
+
+            .w3-container {
+                flex-grow: 1; /* Ensures that the content container stretches to fill the card */
+            }
+
+
+            @media screen and (max-width: 768px) {
+                .card-wrapper {
+                    flex-direction: column; /* Stacks the cards vertically */
+                    align-items: stretch; /* Ensures full-width stacking */
+                }
+                
+                .card-item {
+                    margin: 10px 0; /* Adds vertical space between the stacked cards */
+                    max-width: 100%; /* Allow the cards to take up full width */
+                }
+            }
+
+            .filter-me{
+                filter: none;
+            }
+                
+            @media screen and (max-width: 600px) {
+                .w3-jumbo {
+                    font-size: 40px !important; 
+                }
+                .w3-hide-small {
+                    display: block;
+                }
+            }
+                           
+        </style>
+    </head>
+
+    <body>
+
+
+    <!-- Header with full-height image -->
+    <header class="bgimg-1 w3-display-container w3-grayscale-min filter-me" id="home">
+        
+        <script>
+            const bgElement = document.querySelector(".bgimg-1"); // Get the div
+
+            // Array of image URLs
+            const images = ["Assets/Tennis1.JPEG", "Assets/Badminton1.JPEG"];
+
+            let currentIndex = 0; // Start with the first image
+
+            // Preload all images to avoid delay when changing the background
+            const preloadImages = images.map(image => {
+                const img = new Image();
+                img.src = image;
+                return img;
+            }); 
+                  
+
+            function toggleBackgroundImage() {
+                // Update the background image
+                bgElement.style.transition = "background-image 1s ease-in-out"; // Smooth transition
+                bgElement.style.backgroundImage = `url("${images[currentIndex]}")`;
+        
+                // Toggle the index between 0 and 1
+                currentIndex = (currentIndex + 1) % images.length;
+            }
+        
+            // Set an initial background immediately to avoid the white screen
+            bgElement.style.backgroundImage = `url("${images[0]}")`;
+        
+            // Initialize the first image immediately
+            toggleBackgroundImage();
+        
+            // Change the image every 4 seconds
+            setInterval(toggleBackgroundImage, 4000);
+        </script>
+        
+
+    <div class="w3-display-left w3-text-white" style="padding:48px; text-shadow: 1px 0 10px black;">
+        <span class="w3-jumbo w3-hide-small" > <b> Bespannservice München Obersendling - Fürstenried </b></span><br>
+    </div> 
+
+    </header>
+
+    <!-- About Section -->
+    <div class="w3-container" style="padding:128px 16px" id="about">
+    <h3 class="w3-center">Das zeichnet uns aus!</h3>
+    <div class="w3-row-padding w3-center" style="margin-top:64px">
+
+        <div class="w3-quarter">
+            <i class="fa fa-trophy w3-margin-bottom w3-jumbo w3-center"></i>
+            <p class="w3-large">Expertise</p>
+            <p>Mit umfassender <b>Expertise und Langjähriger Erfahrung</b> bieten wir professionelle Bespannung für Tennis und Badminton Schläger an</p>
+            </div>
+
+        <div class="w3-quarter">
+            <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+            <p class="w3-large">Große Auswahl</p>
+            <p> Erfahrene Trainer <b>helfen</b> Dir bei der Auswahl der <b>richtigen</b> Saite und Bespannungshärte für Dein Spiel -  
+                selbstverständlich <b>ohne Zusatzkosten!</b> </p>
+            </div>
+
+        <div class="w3-quarter">
+            <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+            <p class="w3-large">Qualität</p>
+            <p>Dank der elektrischen Bespannungsmaschine garantieren wir <b>präzise Bespannung</b> und erstklassige Qualität für optimale Performance</p>
+        </div>
+        
+
+        <div class="w3-quarter">
+            <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+            <p class="w3-large">Schnell & unkompliziert</p>
+            <p>Dein Schläger wird innerhalb von 2 Tagen professionell bespannt. Die Kontaktaufnahme ist <b> schnell und bequem </b> über <b>WhatsApp</b> möglich  </p>
+        </div>
+
+    </div>
+    </div>
+
+    <!-- Products -->
+    <div class="w3-container" style="padding:1px 16px; padding-bottom:128px" id="team">
+        <h3 class="w3-center">Bespannservice & mehr!</h3>
+        
+        <div class="w3-row-padding w3-grayscale card-wrapper" style="margin-top:64px; display: flex; justify-content: space-between;">
+        
+            <div class="w3-col l3 m6 w3-margin-bottom card-item">  
+                <div class="w3-card">
+                    <img  src="Assets/Tennis2.JPEG" alt="tennisCard" style="width:100%">
+                    <div class="w3-container flex-container">
+                        <h3>Bespannservice Tennis</h3>
+                        <p>Tennissaiten sollen <b>regelmäßig</b> gewächselt werden:
+                            <ul>
+                                <li> Anfänger: <b>1-2 Mal im Jahr</b></li>
+                                <li> Fortgescrittene: <b>3-4 Mal im Jahr</b></li>
+                                <li> Mannschaftspieler: <b>einmal pro 1-2 Monate</b></li>
+                            </ul>
+                        </p>
+                        <p class="flex-end"><a href="Tennis.html" class="w3-button w3-black w3-block"> zu den Angeboten</a> </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l3 m6 w3-margin-bottom card-item">
+                <div class="w3-card">
+                    <img src="Assets/Badminton2.JPEG" alt="badmintonCard" style="width:100%">
+                    <div class="w3-container flex-container">
+                        <h3>Bespannservice Badminton</h3>
+                        <p>Badmintonsaiten sollen <b>regelmäßig</b> gewächselt werden:
+                            <ul>
+                                <li> Anfänger: <b>1-2 Mal im Jahr</b></li>
+                                <li> Fortgescrittene: <b>3-4 Mal im Jahr</b></li>
+                                <li> Mannschaftspieler: <b>einmal pro 1-2 Monate</b></li>
+                            </ul>
+                        </p>
+                        <p class="flex-end"><a href="Badminton.html" class="w3-button w3-black w3-block"> zu den Angeboten</a> </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l3 m6 w3-margin-bottom card-item">
+                <div class="w3-card">
+                    <img src="Assets/Zubehoer.JPEG" alt="zubehoerCard" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Zubehör</h3>
+
+                        <p>folgende Zubehör stehen aktuell zur Verfügung:
+                            <ul>
+                                <li> <b>Griffband/ Overgrip</b> ab 3€</li>
+                                <li> <b> Basisgrip</b> ab 7€</li>
+                                <li> <b> Dämpfer</b> ab 3€ </li>
+                            </ul>
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+        <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">&times;</span>
+        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+            <img id="img01" class="w3-image">
+            <p id="caption" class="w3-opacity w3-large"></p>
+        </div>
+    </div>
+
+
+    <!-- Contact Section -->
+    <div class="w3-container w3-light-grey" style="padding:64px 16px" id="contact">
+        <h3 class="w3-center">Kontakt</h3>
+        <p class="w3-center w3-large">Möchtest Du einen Termin zum Bespannen ausmachen? Oder hast Du Fragen? 
+            <br> Schreib mir einfach eine Nachricht auf WhatsApp – wir melden uns schnellstmöglich zurück!</p>
+        <div style="margin-top:48px">
+            <p>
+                <i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> 
+                <a href="https://www.google.com/maps/dir//Constanze%20Hallgarten%20Stra%C3%9Fe%2056,%2081379%20M%C3%BCnchen" target="_blank">Constanze Hallgarten Str. 56, 81379 München
+               </a>
+              </p>
+              
+              
+              <p>
+                <i class="fa fa-whatsapp fa-fw w3-xxlarge w3-margin-right"></i> 
+                <a href="https://wa.me/+491794241063?text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20eine%20neue%20Bespannung%20ausmachen.%20Meine%20Verf%C3%BCgbarkeit%20w%C3%A4re%20(BITTE%20TERMINE%20VORSCHLAGEN)%3A%0A-%20...%0A-%20...%0A%0ABitte%20um%20kurze%20R%C3%BCckmeldung!%20" target="_blank">0179 424 1063 </a>
+                <!-- https://wa.me/+491794241063--> 
+              </p>
+              
+              
+              <p>
+                <i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"></i> 
+                <a href="mailto:mehdis.tennis@gmail.com?subject=Termin%20Anfrage&body=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20eine%20neue%20Bespannung%20ausmachen.%20Meine%20Verf%C3%BCgbarkeit%20w%C3%A4re%20(BITTE%20TERMINE%20VORSCHLAGEN)%3A%0A-%20...%0A-%20...%0A%0ABitte%20um%20kurze%20R%C3%BCckmeldung!%20" target="_blank">mehdis.tennis@gmail.com</a>
+              </p>
+
+              <p>
+                <i class="fa fa-instagram fa-fw w3-xxlarge w3-margin-right"></i> 
+                <a href="https://www.instagram.com/mehdis_tennis/profilecard/?igsh=MWcwcndlMDBweDc4MQ==" target="_blank">mehdis_tennis</a>
+              </p>          
+        </div>
+    </div>
+
+
+
+   <!-- About Section -->
+   <div class="w3-container w3-center w3-large" style="padding:64px 16px" id="about">
+    <h3 class="w3-center">Hättest Du Interesse am Tennis Training? </h3>
+            <p>
+                <a href=https://mehdis-tennis.webflow.io/ target="_blank">zur Tennis Schule</a>
+                <i style='font-size:24px' class='fa-fw w3-xxlarge w3-margin-right'>&#x1F3BE;</i>
+            </p>
+
+    <h3 class="w3-center">Hochwertige Besaitungsmaschine: Babolat 3002 </h3>
+            <p>
+                <a href= "Maschine.html" target="_blank">mehr über die Maschine</a>
+                <i style='font-size:24px' class='fa-fw w3-xxlarge w3-margin-right'>&#128295;</i>
+            </p>
+
+    </div>
+
+
+
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-64">
+        <div class="w3-xlarge w3-section">
+            <a class="fa fa-instagram w3-hover-opacity" style="margin-right: 10px"href="https://www.instagram.com/mehdis_tennis/profilecard/?igsh=MWcwcndlMDBweDc4MQ=="></a>
+            <a class="fa fa-whatsapp w3-hover-opacity" style="margin-right: 10px" href="https://wa.me/+491794241063"></a>
+        </div>
+        <a href="Impressum.html" target="_blank"> Impressum</a>
+        <a href="datenschutz.html" style="margin: 0 20px" target="_blank"> Datenschutz</a>
+    </footer>
+    
+    </body>
+</html>
