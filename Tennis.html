@@ -34,35 +34,72 @@
       .inline-elem {
         display: inline-block;
       }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #888;
+      margin-right: 8px;
+      font-size: 18px;
+    }
+
+    .new-price {
+      color: #e53935;
+      font-weight: bold;
+      font-size: 26px;
+    }
+
+    /* NEW STYLE FOR BLACK FRIDAY BANNER */
+    .bf-banner {
+        background-color: #000;
+        color: #fff;
+        padding: 40px 16px;
+        text-align: center;
+        border-bottom: 4px solid #f44336;
+    }
+
+
+
     </style>
   </head>
 
   <body>
+
+    <!-- BLACK FRIDAY BANNER -->
+    <div class="bf-banner" id="blackfriday">
+        <h2 style="font-weight: bold; letter-spacing: 2px;" class="w3-text-red">
+            🖤 BLACK FRIDAY SPECIAL 🖤
+        </h2>
+        <p class="w3-large">
+            Zeit für frische Saiten mit mehr Power 💥 / Spin 🌀 / Kontrolle 🎯 <br>
+            <b>Spare jetzt 5€</b> auf Deine neue Besaitung!*
+        </p>
+    </div>
+
     <!-- Pricing Section -->
     <div
       class="w3-container w3-center w3-dark-grey"
-      style="padding: 85px 16px"
+      style="padding: 40px 16px"
       id="pricing"
     >
-      <h3>Preise</h3>
+         
+      <!-- <h3><b>Preise</b></h3> -->
 
-      <p class="w3-large">
-        Entdecke unsere Produkt-Kategorien – perfekt abgestimmt auf Deine
-        Bedürfnisse! <br />Bei der Auswahl ist es entscheidend, wie oft Du
-        spielst und welche
-        <b><span style="color: #f44336"> individuellen Ansprüche</span></b> Du
-        hast. <br />Suchst Du eine Saite, die besonders
-        <b><span style="color: #f44336">armschonend</span></b> ist und maximalen
-        <b><span style="color: #f44336"> Komfort</span></b> bietet? <br />Oder
-        legst Du Wert auf mehr
-        <b><span style="color: #f44336"> Spin und Geschwindigkeit</span></b>
-        . Egal, was Du brauchst – haben wir die passende Lösung für Dich!
+      <p class="w3-large" style="max-width: 900px; margin: 0 auto 40px auto;">
+          Finde die passende Saite für Deinen Spielstil – individuell abgestimmt auf Deine
+          Bedürfnisse. <br>
+          Ob Du besonderen Wert auf 
+          <b><span style="color: #f44336;">Armschonung</span></b>, maximalen 
+          <b><span style="color: #f44336;">Komfort</span></b>, mehr 
+          <b><span style="color: #f44336;">Spin</span></b> oder zusätzliche 
+          <b><span style="color: #f44336;">Power</span></b> legst: <br>
+          Wir haben für jede Spielhäufigkeit und jeden Anspruch die passende Besaitung.
       </p>
+
 
       <div class="w3-row-padding" style="margin-top: 32px">
         <div class="w3-third w3-section">
           <ul class="w3-ul w3-white w3-hover-shadow">
-            <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
+            <li class="w3-black w3-xlarge w3-padding-32">Basic </li>
             <li class="w3-padding-16">
               Ich spiele nicht so oft, etwa <b>1-4 </b> im Monat
             </li>
@@ -100,7 +137,9 @@
 
             <li class="w3-padding-16 flex-container">
               <p class="inline-elem">ab</p>
-              <h2 class="w3-wide inline-elem">32€</h2>
+              <span class="old-price">32€</span>
+              <span class="new-price">27€</span>
+
             </li>
 
             <li class="w3-light-grey w3-padding-24">
@@ -128,7 +167,8 @@
             </li>
             <li class="w3-padding-16 flex-container">
               <p class="inline-elem">ab</p>
-              <h2 class="w3-wide inline-elem">39€</h2>
+              <span class="old-price">39€</span>
+              <span class="new-price">34€</span>
             </li>
 
             <li class="w3-light-grey w3-padding-24">
@@ -143,19 +183,31 @@
       </div>
 
       <br />
-      <p class="w3-large">
-        Dein Schläger wird normalerweise innerhalb von
-        <b><span style="color: #f44336"> 48 Stunden</span></b> abholbereit.
-        <br />Dein nächstes Spiel ist bereits morgen und Du kannst nicht so
-        lange warten!? Mit dem Express-Service für
-        <b><span style="color: #f44336"> 5€ Aufpreis</span></b> wird Dein
-        Schläger innerhalb von
-        <b><span style="color: #f44336"> 24 Stunden</span></b> fertig bespannt!
+
+      <p class="w3-large" style="margin-top: 30px;">
+        Dein Schläger ist in der Regel innerhalb von 
+        <b><span style="color: #f44336;">48 Stunden</span></b> abholbereit. 
+        <br>
+        Du brauchst ihn schneller? Mit unserem Express-Service 
+        (<b><span style="color: #f44336;">+5€</span></b>) 
+        ist die Besaitung bereits nach 
+        <b><span style="color: #f44336;">24 Stunden</span></b> fertig.
       </p>
+
+
+      <p class="w3-large" style="margin-top: 30px;">
+        Bespannservice mit eigenen Saiten ist ebenfalls möglich und kostet <b>25€</b>.
+      </p>
+
     </div>
 
     <!-- Footer -->
-    <footer class="w3-center w3-black w3-padding-64">
+    <footer class="w3-center w3-black w3-padding-32">
+
+      <p class="w3-small w3-text-grey" style="font-style: italic; margin-bottom: 16px;">
+          *5€ Rabatt auf den regulären Preis. Angebot gilt, solange der Vorrat reicht.
+      </p> 
+
       <a href="index.html#contact" class="w3-button w3-light-grey"
         >Kontakt aufnehmen</a
       >

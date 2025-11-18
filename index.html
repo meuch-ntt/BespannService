@@ -86,97 +86,102 @@
                     display: block;
                 }
             }
-                           
+            
+            /* NEW STYLE FOR BLACK FRIDAY BANNER */
+            .bf-banner {
+                background-color: #000;
+                color: #fff;
+                padding: 40px 16px;
+                text-align: center;
+                border-bottom: 4px solid #f44336; /* Red line for emphasis */
+            }
+                    
         </style>
     </head>
 
     <body>
 
-
-    <!-- Header with full-height image -->
-    <header class="bgimg-1 w3-display-container w3-grayscale-min filter-me" id="home">
-        
-        <script>
-            const bgElement = document.querySelector(".bgimg-1"); // Get the div
-
-            // Array of image URLs
-            const images = ["Assets/Tennis1.JPEG", "Assets/Badminton1.JPEG"];
-
-            let currentIndex = 0; // Start with the first image
-
-            // Preload all images to avoid delay when changing the background
-            const preloadImages = images.map(image => {
-                const img = new Image();
-                img.src = image;
-                return img;
-            }); 
-                  
-
-            function toggleBackgroundImage() {
-                // Update the background image
-                bgElement.style.transition = "background-image 1s ease-in-out"; // Smooth transition
-                bgElement.style.backgroundImage = `url("${images[currentIndex]}")`;
-        
-                // Toggle the index between 0 and 1
-                currentIndex = (currentIndex + 1) % images.length;
-            }
-        
-            // Set an initial background immediately to avoid the white screen
-            bgElement.style.backgroundImage = `url("${images[0]}")`;
-        
-            // Initialize the first image immediately
-            toggleBackgroundImage();
-        
-            // Change the image every 4 seconds
-            setInterval(toggleBackgroundImage, 4000);
-        </script>
-        
-
-    <div class="w3-display-left w3-text-white" style="padding:48px; text-shadow: 1px 0 10px black;">
-        <span class="w3-jumbo w3-hide-small" > <b> Tennisbesaitung München<br>Schlägerservice vom Profi-Tennistrainer </b></span><br>
-    </div> 
-
-    </header>
-
-    <!-- About Section -->
-    <div class="w3-container" style="padding:128px 16px" id="about">
-    <h3 class="w3-center">Das zeichnet uns aus!</h3>
-    <div class="w3-row-padding w3-center" style="margin-top:64px">
-
-        <div class="w3-quarter">
-            <i class="fa fa-trophy w3-margin-bottom w3-jumbo w3-center"></i>
-            <p class="w3-large">Expertise</p>
-            <p>Mit umfassender <b>Expertise und Langjähriger Erfahrung</b> bieten wir professionelle Bespannung für Tennis und Badminton Schläger an</p>
-            </div>
-
-        <div class="w3-quarter">
-            <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
-            <p class="w3-large">Große Auswahl</p>
-            <p> Erfahrene Trainer <b>helfen</b> Dir bei der Auswahl der <b>richtigen</b> Saite und Bespannungshärte für Dein Spiel -  
-                selbstverständlich <b>ohne Zusatzkosten!</b> </p>
-            </div>
-
-        <div class="w3-quarter">
-            <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
-            <p class="w3-large">Qualität</p>
-            <p>Dank der elektrischen Bespannungsmaschine garantieren wir <b>präzise Bespannung</b> und erstklassige Qualität für optimale Performance</p>
-        </div>
-        
-
-        <div class="w3-quarter">
-            <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
-            <p class="w3-large">Schnell & unkompliziert</p>
-            <p>Dein Schläger wird innerhalb von 2 Tagen professionell bespannt. Die Kontaktaufnahme ist <b> schnell und bequem </b> über <b>WhatsApp</b> möglich  </p>
+        <!-- BLACK FRIDAY BANNER -->
+        <div class="bf-banner" id="blackfriday" style="text-align:center; padding:10px 10px 5px 10px" >
+            <h2 style="font-weight: bold; margin-bottom: 5px; font-size: 24px !important;" class="w3-text-red">
+                🖤 BLACK FRIDAY SPECIAL 🖤
+            </h2>
+            <p class="w3-large">
+                <b>Spare jetzt 5€</b> auf Deine neue Besaitung!*
+            </p>
         </div>
 
-    </div>
-    </div>
+        <header class="bgimg-1 w3-display-container w3-grayscale-min filter-me" id="home">
+    
+            <script>
+                const bgElement = document.querySelector(".bgimg-1");
 
-    <!-- Products -->
-    <div class="w3-container" style="padding:1px 16px; padding-bottom:128px" id="team">
-        <h3 class="w3-center">Bespannservice & mehr!</h3>
+                const images = ["Assets/Tennis1.JPEG", "Assets/Badminton1.JPEG"];
+                let currentIndex = 0;
+
+                const preloadImages = images.map(image => {
+                    const img = new Image();
+                    img.src = image;
+                    return img;
+                });
+
+                function toggleBackgroundImage() {
+                    bgElement.style.transition = "background-image 1s ease-in-out";
+                    bgElement.style.backgroundImage = `url("${images[currentIndex]}")`;
+                    currentIndex = (currentIndex + 1) % images.length;
+                }
+
+                bgElement.style.backgroundImage = `url("${images[0]}")`;
+                toggleBackgroundImage();
+                setInterval(toggleBackgroundImage, 4000);
+            </script>
+
+            <div class="w3-display-left w3-text-white" style="padding:48px; text-shadow: 1px 0 10px black;">
+                <span class="w3-jumbo w3-hide-small">
+                    <b>Tennisbesaitung München<br>Schlägerservice vom Profi-Tennistrainer</b>
+                </span><br>
+            </div>
+
+        </header>
+
+
+        <div class="w3-container" style="padding:128px 16px" id="about">
+        <h3 class="w3-center">Das zeichnet uns aus!</h3>
+        <div class="w3-row-padding w3-center" style="margin-top:64px">
+
+            <div class="w3-quarter">
+                <i class="fa fa-trophy w3-margin-bottom w3-jumbo w3-center"></i>
+                <p class="w3-large">Expertise</p>
+                <p>Mit umfassender <b>Expertise und Langjähriger Erfahrung</b> bieten wir professionelle Bespannung für Tennis-Schläger an</p>
+                </div>
+
+            <div class="w3-quarter">
+                <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+                <p class="w3-large">Große Auswahl</p>
+                <p> Erfahrene Trainer <b>helfen</b> Dir bei der Auswahl der <b>richtigen</b> Saite und Bespannungshärte für Dein Spiel -  
+                    selbstverständlich <b>ohne Zusatzkosten!</b> </p>
+                </div>
+
+            <div class="w3-quarter">
+                <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+                <p class="w3-large">Qualität</p>
+                <p>Dank der elektrischen Bespannungsmaschine garantieren wir <b>präzise Bespannung</b> und erstklassige Qualität für optimale Performance</p>
+            </div>
+            
+
+            <div class="w3-quarter">
+                <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+                <p class="w3-large">Schnell & unkompliziert</p>
+                <p>Dein Schläger wird innerhalb von 2 Tagen professionell bespannt. Die Kontaktaufnahme ist <b> schnell und bequem </b> über <b>WhatsApp</b> möglich  </p>
+            </div>
+
+        </div>
+        </div>
+
+        <div class="w3-container" style="padding:1px 16px; padding-bottom:128px" id="team">
+            <h3 class="w3-center">Bespannservice & mehr!</h3>
         
-        <div class="w3-row-padding w3-grayscale card-wrapper" style="margin-top:64px; display: flex; justify-content: space-between;">
+            <div class="w3-row-padding w3-grayscale card-wrapper" style="margin-top:64px; display: flex; justify-content: space-between;">
         
             <div class="w3-col l3 m6 w3-margin-bottom card-item">  
                 <div class="w3-card">
@@ -237,9 +242,8 @@
     </div>
 
 
-    <!-- Modal for full size images on click-->
     <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-        <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">&times;</span>
+        <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
         <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
             <img id="img01" class="w3-image">
             <p id="caption" class="w3-opacity w3-large"></p>
@@ -247,7 +251,6 @@
     </div>
 
 
-    <!-- Contact Section -->
     <div class="w3-container w3-light-grey" style="padding:64px 16px" id="contact">
         <h3 class="w3-center">Kontakt</h3>
         <p class="w3-center w3-large">Möchtest Du einen Termin zum Bespannen ausmachen? Oder hast Du Fragen? 
@@ -256,15 +259,14 @@
             <p>
                 <i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> 
                 <a href="https://www.google.com/maps/dir//Constanze%20Hallgarten%20Stra%C3%9Fe%2056,%2081379%20M%C3%BCnchen" target="_blank">Constanze Hallgarten Str. 56, 81379 München
-               </a>
+                </a>
               </p>
               
               
               <p>
                 <i class="fa fa-whatsapp fa-fw w3-xxlarge w3-margin-right"></i> 
                 <a href="https://wa.me/+491794241063?text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20eine%20neue%20Bespannung%20ausmachen.%20Meine%20Verf%C3%BCgbarkeit%20w%C3%A4re%20(BITTE%20TERMINE%20VORSCHLAGEN)%3A%0A-%20...%0A-%20...%0A%0ABitte%20um%20kurze%20R%C3%BCckmeldung!%20" target="_blank">0179 424 1063 </a>
-                <!-- https://wa.me/+491794241063--> 
-              </p>
+                </p>
               
               
               <p>
@@ -281,21 +283,12 @@
 
 
 
-   <!-- About Section -->
    <div class="w3-container w3-center w3-large" style="padding:64px 16px" id="about">
     
-    <!--
-    <h3 class="w3-center">Hättest Du Interesse am Tennis Training? </h3>
-            <p>
-                <a href=https://mehdis-tennis.webflow.io/ target="_blank">zur Tennis Schule</a>
-                <i style='font-size:24px' class='fa-fw w3-xxlarge w3-margin-right'>&#x1F3BE;</i>
-            </p>
-    -->
-       
     <h3 class="w3-center">Hochwertige Besaitungsmaschine: Babolat 3002 </h3>
             <p>
                 <a href= "Maschine.html" target="_blank">mehr über die Maschine</a>
-                <i style='font-size:24px' class='fa-fw w3-xxlarge w3-margin-right'>&#128295;</i>
+                <i style='font-size:24px' class='fa-fw w3-xxlarge w3-margin-right'>🔧</i>
             </p>
 
     </div>
@@ -303,9 +296,17 @@
 
 
 
-    <!-- Footer -->
-    <footer class="w3-center w3-black w3-padding-64">
+    <footer class="w3-center w3-black w3-padding-32">
+        
+        <div class="w3-container w3-padding-16">
+
+        </div>
+        
         <div class="w3-xlarge w3-section">
+
+            <p class="w3-small w3-text-grey" style="font-style: italic;">
+                *5€ Rabatt auf den regulären Preis. Angebot gilt, solange der Vorrat reicht.
+            </p> 
             <a class="fa fa-instagram w3-hover-opacity" style="margin-right: 10px"href="https://www.instagram.com/mehdis_tennis/profilecard/?igsh=MWcwcndlMDBweDc4MQ=="></a>
             <a class="fa fa-whatsapp w3-hover-opacity" style="margin-right: 10px" href="https://wa.me/+491794241063"></a>
         </div>
