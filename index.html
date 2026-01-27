@@ -1,520 +1,483 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Besaitung München</title>
-        <link rel="icon" type="image/x-icon" href="/Assets/Bespannung.ico">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <style>
-            body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+  <head>
+    <title>Besaitung München</title>
+    <link rel="icon" type="image/x-icon" href="/Assets/Bespannung.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-            body, html {
-                height: 100%;
-                line-height: 1.8;
-            }
+    <style>
+      body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
-            html {
-                scroll-behavior: smooth;
-            }
+      body, html {
+        height: 100%;
+        line-height: 1.8;
+      }
 
-            /* Full height image header */
-            .bgimg-1 {
-                background-position: center;
-                background-size: cover;
-                background-image: url("Assets/Tennis1.JPEG");
-                min-height: 100%;
-                transition: background-image 1s ease-in-out;
-            }
+      html { scroll-behavior: smooth; }
 
-            .w3-bar .w3-button {
-                padding: 16px;
-            }
+      /* Full height image header */
+      .bgimg-1 {
+        background-position: center;
+        background-size: cover;
+        background-image: url("Assets/Tennis1.JPEG");
+        min-height: 100%;
+        transition: background-image 1s ease-in-out;
+      }
 
-            .inline-block{
-                display: inline-block;
-                margin-left: 50px;
-            }
+      .w3-bar .w3-button { padding: 16px; }
 
-            .card-wrapper {
-                display: flex;
-                justify-content: space-between;
-                align-items: stretch;
-                flex-wrap: wrap;
-                margin: 0 auto;
-            }
+      .inline-block{
+        display: inline-block;
+        margin-left: 50px;
+      }
 
-            .card-item {
-                flex: 1;
-                margin: 0 10px;
-                max-width: 300px;
-                display: flex;
-                flex-direction: column;
-            }
+      .card-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        flex-wrap: wrap;
+        margin: 0 auto;
+      }
 
-            .w3-card {
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-            }
+      .card-item {
+        flex: 1;
+        margin: 0 10px;
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+      }
 
-            .w3-container {
-                flex-grow: 1;
-            }
+      .w3-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
 
-            @media screen and (max-width: 768px) {
-                .card-wrapper {
-                flex-direction: column;
-                align-items: stretch;
-                }
-                .card-item {
-                margin: 10px 0;
-                max-width: 100%;
-                }
-            }
+      .w3-container { flex-grow: 1; }
 
-            .filter-me{
-                filter: none;
-            }
+      @media screen and (max-width: 768px) {
+        .card-wrapper { flex-direction: column; align-items: stretch; }
+        .card-item { margin: 10px 0; max-width: 100%; }
+      }
 
-            @media screen and (max-width: 600px) {
-                .w3-jumbo {
-                font-size: 40px !important;
-                }
-                .w3-hide-small {
-                display: block;
-                }
-            }
+      .filter-me{ filter: none; }
 
-            /* NEW STYLE FOR BLACK FRIDAY BANNER */
-            .bf-banner {
-                background-color: #000;
-                color: #fff;
-                padding: 40px 16px;
-                text-align: center;
-                border-bottom: 4px solid #f44336;
-            }
+      @media screen and (max-width: 600px) {
+        .w3-jumbo { font-size: 40px !important; }
+        .w3-hide-small { display: block; }
+      }
 
-            /* ===== HERO NAV BUTTONS (NEW) ===== */
-            .hero-nav{
-                margin-top: 22px;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 12px;
-                align-items: center;
-            }
+      /* NEW STYLE FOR BLACK FRIDAY BANNER */
+      .bf-banner {
+        background-color: #000;
+        color: #fff;
+        padding: 40px 16px;
+        text-align: center;
+        border-bottom: 4px solid #f44336;
+      }
 
-            .nav-btn{
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                padding: 12px 16px;
-                border-radius: 999px;
-                border: 1px solid rgba(255,255,255,.55);
-                color: #fff;
-                text-decoration: none;
-                font-weight: 600;
-                letter-spacing: .2px;
-                background: rgba(0,0,0,.25);
-                backdrop-filter: blur(4px);
-                transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
-                box-shadow: 0 6px 18px rgba(0,0,0,.25);
-                white-space: nowrap;
-            }
+      /* ===== HERO NAV BUTTONS ===== */
+      .hero-nav{
+        margin-top: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
 
-            .nav-btn:hover{
-                transform: translateY(-2px);
-                background: rgba(0,0,0,.45);
-                border-color: rgba(255,255,255,.9);
-            }
+      .nav-btn{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,.55);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: .2px;
+        background: rgba(0,0,0,.25);
+        backdrop-filter: blur(4px);
+        transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+        box-shadow: 0 6px 18px rgba(0,0,0,.25);
+        white-space: nowrap;
+      }
 
-            .nav-btn-primary{
-                padding: 14px 20px;
-                font-size: 1.05rem;
-                border: 0;
-                background: linear-gradient(135deg, #2ecc71, #27ae60);
-                box-shadow: 0 10px 26px rgba(39,174,96,.38);
-                position: relative;
-            }
+      .nav-btn:hover{
+        transform: translateY(-2px);
+        background: rgba(0,0,0,.45);
+        border-color: rgba(255,255,255,.9);
+      }
 
-            .nav-btn-primary:hover{
-                transform: translateY(-3px) scale(1.02);
-                box-shadow: 0 14px 32px rgba(39,174,96,.48);
-            }
+      .nav-btn-primary{
+        padding: 14px 20px;
+        font-size: 1.05rem;
+        border: 0;
+        background: linear-gradient(135deg, #2ecc71, #27ae60);
+        box-shadow: 0 10px 26px rgba(39,174,96,.38);
+        position: relative;
+      }
 
-            .nav-btn-primary::after{
-                content: "";
-                position: absolute;
-                inset: -4px;
-                border-radius: 999px;
-                border: 2px solid rgba(46, 204, 113, .55);
-                opacity: 0;
-                animation: pulse 2.2s ease-in-out infinite;
-            }
+      .nav-btn-primary:hover{
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 14px 32px rgba(39,174,96,.48);
+      }
 
-            @keyframes pulse{
-                0%, 100% { transform: scale(1); opacity: 0; }
-                45%      { transform: scale(1.06); opacity: .45; }
-            }
-        
-            /* ===== REVIEWS SECTION ===== */
-            .reviews-section{ padding: 64px 16px; }
-            .reviews-wrap{ max-width: 980px; margin: 0 auto; }
-            .reviews-card{
-            background:#fff; border-radius:16px; padding:22px;
-            box-shadow:0 10px 28px rgba(0,0,0,.08);
-            }
-            .stars{ font-size:22px; letter-spacing:2px; margin:6px 0 10px 0; }
-            .review-text{ font-size: 1.05rem; margin: 0 0 12px 0; }
-            .review-meta{ margin: 0; opacity: .85; }
-            .review-meta span{ margin-left: 10px; opacity: .8; }
-            /* .review-actions{ margin-top: 14px; display:flex; gap:12px; flex-wrap:wrap; } */  
+      .nav-btn-primary::after{
+        content: "";
+        position: absolute;
+        inset: -4px;
+        border-radius: 999px;
+        border: 2px solid rgba(46, 204, 113, .55);
+        opacity: 0;
+        animation: pulse 2.2s ease-in-out infinite;
+      }
 
-            .stars{
-            font-size: 24px;
-            letter-spacing: 3px;
-            margin: 6px 0 12px 0;
-            color: #2ecc71; /* base green */
-            text-shadow:
-                0 0 6px rgba(46,204,113,.6),
-                0 0 14px rgba(46,204,113,.35);
-            }
+      /* You used nav-btn-tertiary in HTML — define it */
+      .nav-btn-tertiary{
+        background: rgba(0,0,0,.18);
+        border: 1px solid rgba(255,255,255,.55);
+      }
 
-            /* ===== REVIEW FADE TRANSITION ===== */
-            .review-text,
-            .review-meta{
-            opacity: 1;
-            transition: opacity 0.45s ease-in-out;
-            will-change: opacity;
-            }
+      @keyframes pulse{
+        0%, 100% { transform: scale(1); opacity: 0; }
+        45%      { transform: scale(1.06); opacity: .45; }
+      }
 
-            .review-hidden{
-            opacity: 0;
-            }
+      /* ===== REVIEWS SECTION ===== */
+      .reviews-section{ padding: 64px 16px; }
+      .reviews-wrap{ max-width: 980px; margin: 0 auto; }
+      .reviews-card{
+        background:#fff;
+        border-radius:16px;
+        padding:22px;
+        box-shadow:0 10px 28px rgba(0,0,0,.08);
+      }
 
-        </style>
+      /* Stars look */
+      .stars{
+        font-size: 24px;
+        letter-spacing: 3px;
+        margin: 6px 0 12px 0;
+        color: #2ecc71;
+        text-shadow:
+          0 0 6px rgba(46,204,113,.6),
+          0 0 14px rgba(46,204,113,.35);
+      }
 
-    </head>
+      .review-text{ font-size: 1.05rem; margin: 0 0 12px 0; }
+      .review-meta{ margin: 0; opacity: .85; }
+      .review-meta span{ margin-left: 10px; opacity: .8; }
+      /* .review-actions{ margin-top: 14px; display:flex; gap:12px; flex-wrap:wrap; } */
 
-    <body>
-        
-        <!-- BLACK FRIDAY BANNER (disabled)
-        <div class="bf-banner" id="blackfriday" style="text-align:center; padding:10px 10px 5px 10px" >
-            <h2 style="font-weight: bold; margin-bottom: 5px; font-size: 24px !important;" class="w3-text-red">
-                🖤 BLACK FRIDAY SPECIAL 🖤
-            </h2>
-            <p class="w3-large">
-                <b>Spare jetzt 5€</b> auf Deine neue Besaitung!*
-            </p>
-        </div>
-        -->
+      /* Fade applies to stars + text + meta */
+      .review-text,
+      .review-meta,
+      .stars{
+        opacity: 1;
+        transition: opacity 0.45s ease-in-out;
+        will-change: opacity;
+      }
 
-        <header class="bgimg-1 w3-display-container w3-grayscale-min filter-me" id="home">
+      .review-hidden{ opacity: 0; }
+    </style>
+  </head>
 
-            <script>
-                const bgElement = document.querySelector(".bgimg-1");
-
-                const images = ["Assets/Tennis1.JPEG", "Assets/Badminton1.JPEG"];
-                let currentIndex = 0;
-
-                const preloadImages = images.map(image => {
-                const img = new Image();
-                img.src = image;
-                return img;
-                });
-
-                function toggleBackgroundImage() {
-                bgElement.style.transition = "background-image 1s ease-in-out";
-                bgElement.style.backgroundImage = `url("${images[currentIndex]}")`;
-                currentIndex = (currentIndex + 1) % images.length;
-                }
-
-                bgElement.style.backgroundImage = `url("${images[0]}")`;
-                toggleBackgroundImage();
-                setInterval(toggleBackgroundImage, 4000);
-            </script>
-
-            <div class="w3-display-left w3-text-white" style="padding:48px; text-shadow: 1px 0 10px black;">
-                <span class="w3-jumbo w3-hide-small">
-                <b>Tennisbesaitung München<br>Schlägerservice vom Profi-Tennistrainer</b>
-                </span>
-
-                <!-- NAV BUTTONS -->
-                <div class="hero-nav">
-                    <a href="#team" class="nav-btn nav-btn-primary">
-                        Unsere Angebote
-                    </a>
-
-                    <a href="Tennis.html" class="nav-btn nav-btn-tertiary">
-                        Bespannservice & Preise
-                    </a>
-
-                    <a href="https://wa.me/+491794241063?text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20eine%20neue%20Bespannung%20ausmachen.%20Meine%20Verf%C3%BCgbarkeit%20w%C3%A4re%20(BITTE%20TERMINE%20VORSCHLAGEN)%3A%0A-%20...%0A-%20...%0A%0ABitte%20um%20kurze%20R%C3%BCckmeldung!%20"
-                        class="nav-btn nav-btn-tertiary"
-                        target="_blank"
-                        rel="noopener">
-                        
-                        <i class="fa fa-whatsapp" style="margin-right:8px;"></i>
-                        Termin vereinbaren
-                    </a>
-                    
-                </div>
-
-            </div>
-
-        </header>
-
-
-
-        <div class="w3-container w3-light-grey" style="padding:128px 16px" id="about">
-        <h3 class="w3-center">Das zeichnet uns aus!</h3>
-        <div class="w3-row-padding w3-center" style="margin-top:64px">
-
-            <div class="w3-quarter">
-                <i class="fa fa-trophy w3-margin-bottom w3-jumbo w3-center"></i>
-                <p class="w3-large">Expertise</p>
-                <p>Mit umfassender <b>Expertise und Langjähriger Erfahrung</b> bieten wir professionelle Bespannung für Tennis-Schläger an</p>
-                </div>
-
-            <div class="w3-quarter">
-                <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
-                <p class="w3-large">Große Auswahl</p>
-                <p> Erfahrene Trainer <b>helfen</b> Dir bei der Auswahl der <b>richtigen</b> Saite und Bespannungshärte für Dein Spiel -  
-                    selbstverständlich <b>ohne Zusatzkosten!</b> </p>
-                </div>
-
-            <div class="w3-quarter">
-                <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
-                <p class="w3-large">Qualität</p>
-                <p>Dank der elektrischen Bespannungsmaschine garantieren wir <b>präzise Bespannung</b> und erstklassige Qualität für optimale Performance</p>
-            </div>
-            
-
-            <div class="w3-quarter">
-                <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
-                <p class="w3-large">Schnell & unkompliziert</p>
-                <p>Dein Schläger wird innerhalb von 2 Tagen professionell bespannt. Die Kontaktaufnahme ist <b> schnell und bequem </b> über <b>WhatsApp</b> möglich  </p>
-            </div>
-
-        </div>
-        </div>
-
-        <div class="w3-container" style="padding:1px 16px; padding-bottom:128px" id="team">
-            <h3 class="w3-center">Bespannservice & mehr!</h3>
-        
-            <div class="w3-row-padding w3-grayscale card-wrapper" style="margin-top:64px; display: flex; justify-content: space-between;">
-        
-            <div class="w3-col l3 m6 w3-margin-bottom card-item">  
-                <div class="w3-card">
-                    <img  src="Assets/Tennis2.JPEG" alt="tennisCard" style="width:100%">
-                    <div class="w3-container flex-container">
-                        <h3>Bespannservice für Tennis</h3>
-                        <p>Tennissaiten sollen <b>regelmäßig</b> gewächselt werden:
-                            <ul>
-                                <li> Anfänger: <b>1-2 Mal im Jahr</b></li>
-                                <li> Fortgescrittene: <b>3-4 Mal im Jahr</b></li>
-                                <li> Mannschaftspieler: <b>einmal pro 1-2 Monate</b></li>
-                            </ul>
-                        </p>
-                        <p class="flex-end"><a href="Tennis.html" class="w3-button w3-black w3-block"> zu den Angeboten</a> </p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="w3-col l3 m6 w3-margin-bottom card-item">
-                <div class="w3-card">
-                    <img src="Assets/Zubehoer.JPEG" alt="zubehoerCard" style="width:100%">
-                    <div class="w3-container">
-                        <h3>Zubehör</h3>
-
-                        <p>folgende Zubehör stehen aktuell zur Verfügung:
-                            <ul>
-                                <li> <b>Griffband/ Overgrip</b> ab 3€</li>
-                                <li> <b> Basisgrip</b> ab 7€</li>
-                                <li> <b> Dämpfer</b> ab 3€ </li>
-                            </ul>
-                        </p>
-
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="w3-col l3 m6 w3-margin-bottom card-item">
-                <div class="w3-card">
-                    <img src="Assets/Badminton2.JPEG" alt="badmintonCard" style="width:100%">
-                    <div class="w3-container flex-container">
-                        <h3>Tennis-Training</h3>
-                        <p>Zertifizierter <b> B-Tennis-Trainer </b> von <b>BTV</b> (Bayerischen Tennis-Verband) bietet Training-Stunden an:
-                            <ul>
-                                <li> Gruppen- sowie Einzel-Training  </li>
-                                <li> für jedes Alter </li>
-                                <li> und jede Spielstärke – von kompletten Anfängern bis zu ambitionierten Turnierspielern </li>
-                            </ul>
-                        </p>
-                        <p class="flex-end"><a href="https://mehdis-tennis.webflow.io/" class="w3-button w3-black w3-block"> mehr hierzu </a> </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+  <body>
+    <!-- BLACK FRIDAY BANNER (disabled)
+    <div class="bf-banner" id="blackfriday" style="text-align:center; padding:10px 10px 5px 10px" >
+      <h2 style="font-weight: bold; margin-bottom: 5px; font-size: 24px !important;" class="w3-text-red">
+        🖤 BLACK FRIDAY SPECIAL 🖤
+      </h2>
+      <p class="w3-large">
+        <b>Spare jetzt 5€</b> auf Deine neue Besaitung!*
+      </p>
     </div>
+    -->
+
+    <header class="bgimg-1 w3-display-container w3-grayscale-min filter-me" id="home">
+      <script>
+        const bgElement = document.querySelector(".bgimg-1");
+
+        const images = ["Assets/Tennis1.JPEG", "Assets/Badminton1.JPEG"];
+        let currentIndex = 0;
+
+        const preloadImages = images.map((image) => {
+          const img = new Image();
+          img.src = image;
+          return img;
+        });
+
+        function toggleBackgroundImage() {
+          bgElement.style.transition = "background-image 1s ease-in-out";
+          bgElement.style.backgroundImage = `url("${images[currentIndex]}")`;
+          currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        bgElement.style.backgroundImage = `url("${images[0]}")`;
+        toggleBackgroundImage();
+        setInterval(toggleBackgroundImage, 4000);
+      </script>
+
+      <div class="w3-display-left w3-text-white" style="padding:48px; text-shadow: 1px 0 10px black;">
+        <span class="w3-jumbo w3-hide-small">
+          <b>Tennisbesaitung München<br />Schlägerservice vom Profi-Tennistrainer</b>
+        </span>
+
+        <!-- NAV BUTTONS -->
+        <div class="hero-nav">
+          <a href="#team" class="nav-btn nav-btn-primary">Unsere Angebote</a>
+
+          <a href="Tennis.html" class="nav-btn nav-btn-tertiary">Bespannservice & Preise</a>
+
+          <a
+            href="https://wa.me/+491794241063?text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20eine%20neue%20Bespannung%20ausmachen.%20Meine%20Verf%C3%BCgbarkeit%20w%C3%A4re%20(BITTE%20TERMINE%20VORSCHLAGEN)%3A%0A-%20...%0A-%20...%0A%0ABitte%20um%20kurze%20R%C3%BCckmeldung!%20"
+            class="nav-btn nav-btn-tertiary"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fa fa-whatsapp" style="margin-right:8px;"></i>
+            Termin vereinbaren
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="w3-container w3-light-grey" style="padding:128px 16px" id="about">
+      <h3 class="w3-center">Das zeichnet uns aus!</h3>
+      <div class="w3-row-padding w3-center" style="margin-top:64px">
+        <div class="w3-quarter">
+          <i class="fa fa-trophy w3-margin-bottom w3-jumbo w3-center"></i>
+          <p class="w3-large">Expertise</p>
+          <p>Mit umfassender <b>Expertise und Langjähriger Erfahrung</b> bieten wir professionelle Bespannung für Tennis-Schläger an</p>
+        </div>
+
+        <div class="w3-quarter">
+          <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+          <p class="w3-large">Große Auswahl</p>
+          <p>Erfahrene Trainer <b>helfen</b> Dir bei der Auswahl der <b>richtigen</b> Saite und Bespannungshärte für Dein Spiel - selbstverständlich <b>ohne Zusatzkosten!</b></p>
+        </div>
+
+        <div class="w3-quarter">
+          <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+          <p class="w3-large">Qualität</p>
+          <p>Dank der elektrischen Bespannungsmaschine garantieren wir <b>präzise Bespannung</b> und erstklassige Qualität für optimale Performance</p>
+        </div>
+
+        <div class="w3-quarter">
+          <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+          <p class="w3-large">Schnell & unkompliziert</p>
+          <p>Dein Schläger wird innerhalb von 2 Tagen professionell bespannt. Die Kontaktaufnahme ist <b>schnell und bequem</b> über <b>WhatsApp</b> möglich</p>
+        </div>
+      </div>
     </div>
 
+    <div class="w3-container" style="padding:1px 16px; padding-bottom:128px" id="team">
+      <h3 class="w3-center">Bespannservice & mehr!</h3>
+
+      <div class="w3-row-padding w3-grayscale card-wrapper" style="margin-top:64px; display:flex; justify-content:space-between;">
+        <div class="w3-col l3 m6 w3-margin-bottom card-item">
+          <div class="w3-card">
+            <img src="Assets/Tennis2.JPEG" alt="tennisCard" style="width:100%" />
+            <div class="w3-container flex-container">
+              <h3>Bespannservice für Tennis</h3>
+              <p>
+                Tennissaiten sollen <b>regelmäßig</b> gewächselt werden:
+              <ul>
+                <li>Anfänger: <b>1-2 Mal im Jahr</b></li>
+                <li>Fortgescrittene: <b>3-4 Mal im Jahr</b></li>
+                <li>Mannschaftspieler: <b>einmal pro 1-2 Monate</b></li>
+              </ul>
+              </p>
+              <p class="flex-end"><a href="Tennis.html" class="w3-button w3-black w3-block">zu den Angeboten</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 w3-margin-bottom card-item">
+          <div class="w3-card">
+            <img src="Assets/Zubehoer.JPEG" alt="zubehoerCard" style="width:100%" />
+            <div class="w3-container">
+              <h3>Zubehör</h3>
+              <p>
+                folgende Zubehör stehen aktuell zur Verfügung:
+              <ul>
+                <li><b>Griffband/ Overgrip</b> ab 3€</li>
+                <li><b>Basisgrip</b> ab 7€</li>
+                <li><b>Dämpfer</b> ab 3€</li>
+              </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 w3-margin-bottom card-item">
+          <div class="w3-card">
+            <img src="Assets/Badminton2.JPEG" alt="badmintonCard" style="width:100%" />
+            <div class="w3-container flex-container">
+              <h3>Tennis-Training</h3>
+              <p>
+                Zertifizierter <b>B-Tennis-Trainer</b> von <b>BTV</b> (Bayerischen Tennis-Verband) bietet Training-Stunden an:
+              <ul>
+                <li>Gruppen- sowie Einzel-Training</li>
+                <li>für jedes Alter</li>
+                <li>und jede Spielstärke – von kompletten Anfängern bis zu ambitionierten Turnierspielern</li>
+              </ul>
+              </p>
+              <p class="flex-end"><a href="https://mehdis-tennis.webflow.io/" class="w3-button w3-black w3-block">mehr hierzu</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-        <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
-        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-            <img id="img01" class="w3-image">
-            <p id="caption" class="w3-opacity w3-large"></p>
-        </div>
+      <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+      <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+        <img id="img01" class="w3-image" />
+        <p id="caption" class="w3-opacity w3-large"></p>
+      </div>
     </div>
 
     <!-- GOOGLE REVIEWS (curated 5-star) -->
     <div class="w3-light-grey reviews-section" id="reviews">
-    <div class="reviews-wrap">
+      <div class="reviews-wrap">
         <h3 class="w3-center">Kundenfeedback</h3>
 
         <div class="reviews-card">
-        <div class="stars" aria-label="5 Sterne Bewertung">★★★★★</div>
+          <!-- ✅ stars now have an id so JS can fade them too -->
+          <div class="stars" id="reviewStars" aria-label="5 Sterne Bewertung">★★★★★</div>
 
-        <p id="reviewText" class="review-text"></p>
+          <p id="reviewText" class="review-text"></p>
 
-        <p class="review-meta" id="reviewMeta">
-        <strong id="reviewAuthor"></strong>
-        <span id="reviewDate"></span>
-        </p>
+          <p class="review-meta" id="reviewMeta">
+            <strong id="reviewAuthor"></strong>
+            <span id="reviewDate"></span>
+          </p>
 
-
-        <!--
-        <div class="review-actions">
+          <!--
+          <div class="review-actions">
             <a class="nav-btn nav-btn-tertiary"
-            target="_blank" rel="noopener"
-            href="https://www.google.com/search?q=Besaitungsservice+M%C3%BCnchen+TENNIS+%7C+BADMINTON&hl=de#cobssid=s&mpd=~355121560105272078/customers/reviews">
-            Alle Google-Bewertungen ansehen
+              target="_blank" rel="noopener"
+              href="https://www.google.com/search?q=Besaitungsservice+M%C3%BCnchen+TENNIS+%7C+BADMINTON&hl=de#cobssid=s&mpd=~355121560105272078/customers/reviews">
+              Alle Google-Bewertungen ansehen
             </a>
+          </div>
+          -->
         </div>
-         -->
-        
-        </div>
+      </div>
     </div>
-    </div>
-
-
 
     <div class="w3-container" style="padding:64px 16px" id="contact">
-        <h3 class="w3-center">Kontakt</h3>
-        <p class="w3-center w3-large">Möchtest Du einen Termin zum Bespannen ausmachen? Oder hast Du Fragen? 
-            <br> Schreib mir einfach eine Nachricht auf WhatsApp – wir melden uns schnellstmöglich zurück!</p>
-        <div style="margin-top:48px">
-            <p>
-                <i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> 
-                <a href="https://www.google.com/maps/dir//Constanze%20Hallgarten%20Stra%C3%9Fe%2056,%2081379%20M%C3%BCnchen" target="_blank">Constanze Hallgarten Str. 56, 81379 München
-                </a>
-              </p>
-              
-              
-              <p>
-                <i class="fa fa-whatsapp fa-fw w3-xxlarge w3-margin-right"></i> 
-                <a href="https://wa.me/+491794241063?text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20eine%20neue%20Bespannung%20ausmachen.%20Meine%20Verf%C3%BCgbarkeit%20w%C3%A4re%20(BITTE%20TERMINE%20VORSCHLAGEN)%3A%0A-%20...%0A-%20...%0A%0ABitte%20um%20kurze%20R%C3%BCckmeldung!%20" target="_blank">0179 424 1063 </a>
-                </p>
-              
-              
-              <p>
-                <i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"></i> 
-                <a href="mailto:info@mehdi-tennistrainer.de?subject=Termin%20Anfrage&body=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20eine%20neue%20Bespannung%20ausmachen.%20Meine%20Verf%C3%BCgbarkeit%20w%C3%A4re%20(BITTE%20TERMINE%20VORSCHLAGEN)%3A%0A-%20...%0A-%20...%0A%0ABitte%20um%20kurze%20R%C3%BCckmeldung!%20" target="_blank">info@mehdi-tennistrainer.de</a>
-              </p>
+      <h3 class="w3-center">Kontakt</h3>
+      <p class="w3-center w3-large">
+        Möchtest Du einen Termin zum Bespannen ausmachen? Oder hast Du Fragen?
+        <br />Schreib mir einfach eine Nachricht auf WhatsApp – wir melden uns schnellstmöglich zurück!
+      </p>
 
-              <p>
-                <i class="fa fa-instagram fa-fw w3-xxlarge w3-margin-right"></i> 
-                <a href="https://www.instagram.com/mehdis_tennis/profilecard/?igsh=MWcwcndlMDBweDc4MQ==" target="_blank">mehdis_tennis</a>
-              </p>          
-        </div>
+      <div style="margin-top:48px">
+        <p>
+          <i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i>
+          <a href="https://www.google.com/maps/dir//Constanze%20Hallgarten%20Stra%C3%9Fe%2056,%2081379%20M%C3%BCnchen" target="_blank">
+            Constanze Hallgarten Str. 56, 81379 München
+          </a>
+        </p>
+
+        <p>
+          <i class="fa fa-whatsapp fa-fw w3-xxlarge w3-margin-right"></i>
+          <a href="https://wa.me/+491794241063?text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20eine%20neue%20Bespannung%20ausmachen.%20Meine%20Verf%C3%BCgbarkeit%20w%C3%A4re%20(BITTE%20TERMINE%20VORSCHLAGEN)%3A%0A-%20...%0A-%20...%0A%0ABitte%20um%20kurze%20R%C3%BCckmeldung!%20" target="_blank">
+            0179 424 1063
+          </a>
+        </p>
+
+        <p>
+          <i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"></i>
+          <a href="mailto:info@mehdi-tennistrainer.de?subject=Termin%20Anfrage&body=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20eine%20neue%20Bespannung%20ausmachen.%20Meine%20Verf%C3%BCgbarkeit%20w%C3%A4re%20(BITTE%20TERMINE%20VORSCHLAGEN)%3A%0A-%20...%0A-%20...%0A%0ABitte%20um%20kurze%20R%C3%BCckmeldung!%20" target="_blank">
+            info@mehdi-tennistrainer.de
+          </a>
+        </p>
+
+        <p>
+          <i class="fa fa-instagram fa-fw w3-xxlarge w3-margin-right"></i>
+          <a href="https://www.instagram.com/mehdis_tennis/profilecard/?igsh=MWcwcndlMDBweDc4MQ==" target="_blank">mehdis_tennis</a>
+        </p>
+      </div>
     </div>
 
-
-   <div class="w3-container w3-light-grey w3-center w3-large" style="padding:64px 16px" id="about">
-    
-    <h3 class="w3-center">Hochwertige Besaitungsmaschine: Babolat 3002 </h3>
-            <p>
-                <a href= "Maschine.html" target="_blank">mehr über die Maschine</a>
-                <i style='font-size:24px' class='fa-fw w3-xxlarge w3-margin-right'>🔧</i>
-            </p>
-
+    <div class="w3-container w3-light-grey w3-center w3-large" style="padding:64px 16px" id="about">
+      <h3 class="w3-center">Hochwertige Besaitungsmaschine: Babolat 3002</h3>
+      <p>
+        <a href="Maschine.html" target="_blank">mehr über die Maschine</a>
+        <i style="font-size:24px" class="fa-fw w3-xxlarge w3-margin-right">🔧</i>
+      </p>
     </div>
-
-
 
     <footer class="w3-center w3-black w3-padding-32">
-        
-        <div class="w3-container w3-padding-16">
+      <div class="w3-container w3-padding-16"></div>
 
-        </div>
-        
-        <div class="w3-xlarge w3-section">
-            <!-- Bkack Friday Note
-            <p class="w3-small w3-text-grey" style="font-style: italic;">
-                *5€ Rabatt auf den regulären Preis. Angebot gilt, solange der Vorrat reicht.
-            </p> 
-            -->
-            
-            <a class="fa fa-instagram w3-hover-opacity" style="margin-right: 10px"href="https://www.instagram.com/mehdis_tennis/profilecard/?igsh=MWcwcndlMDBweDc4MQ=="></a>
-            <a class="fa fa-whatsapp w3-hover-opacity" style="margin-right: 10px" href="https://wa.me/+491794241063"></a>
-        </div>
-        <a href="Impressum.html" target="_blank"> Impressum</a>
-        <a href="datenschutz.html" style="margin: 0 20px" target="_blank"> Datenschutz</a>
+      <div class="w3-xlarge w3-section">
+        <a class="fa fa-instagram w3-hover-opacity" style="margin-right: 10px" href="https://www.instagram.com/mehdis_tennis/profilecard/?igsh=MWcwcndlMDBweDc4MQ=="></a>
+        <a class="fa fa-whatsapp w3-hover-opacity" style="margin-right: 10px" href="https://wa.me/+491794241063"></a>
+      </div>
+
+      <a href="Impressum.html" target="_blank">Impressum</a>
+      <a href="datenschutz.html" style="margin: 0 20px" target="_blank">Datenschutz</a>
     </footer>
-    
 
     <script>
-        const reviews = [
-            { text: "Mehdi ist sehr zuvorkommend und zuverlässig. Die Kommunikation verlief unkompliziert und reibungslos. Ich habe meinen Tennisschläger mit neuer Bespannung und inklusive neuem Griffband  in kürzester Zeit wieder abholen können. Ich bin wirklich sehr zufrieden mit dem Service und der Beratung. Preis Leistung ist super! Sehr zu empfehlen!", author: "Franka", date: "Google Bewertung" },
-            { text: "Bespannungstermin wurde kurzfristig und unkompliziert per Whatsapp vereinbart. Die Abholung am nächsten Tag war nach Anfrage möglich. Bespannung ist richtig gut geworden. Mehdi kennt sich gut aus und hat gute Vorschläge bzgl Stringtensions gegeben. Würde ihn jeden empfehlen.", author: "Can K.", date: "Google Bewertung" },
-            { text: "Sehr guter Service. Es war nach Anfrage sogar möglich den Schläger am nächsten Tag abzuholen. Freundlich und Entspannt.", author: "Lukas", date: "Google Bewertung" },
-            { text: "Super Service und Preis-Leistungsverhältnis. Habe zwei Schläger zum Besaiten plus neue Griffbänder abgegeben. Bin sehr zufrieden! Empfehlenswert.", author: "Flo O.", date: "Google Bewertung" }
-        ];
+      const reviews = [
+        { text: "Mehdi ist sehr zuvorkommend und zuverlässig. Die Kommunikation verlief unkompliziert und reibungslos. Ich habe meinen Tennisschläger mit neuer Bespannung und inklusive neuem Griffband  in kürzester Zeit wieder abholen können. Ich bin wirklich sehr zufrieden mit dem Service und der Beratung. Preis Leistung ist super! Sehr zu empfehlen!", author: "Franka", date: "Google Bewertung" },
+        { text: "Bespannungstermin wurde kurzfristig und unkompliziert per Whatsapp vereinbart. Die Abholung am nächsten Tag war nach Anfrage möglich. Bespannung ist richtig gut geworden. Mehdi kennt sich gut aus und hat gute Vorschläge bzgl Stringtensions gegeben. Würde ihn jeden empfehlen.", author: "Can K.", date: "Google Bewertung" },
+        { text: "Sehr guter Service. Es war nach Anfrage sogar möglich den Schläger am nächsten Tag abzuholen. Freundlich und Entspannt.", author: "Lukas", date: "Google Bewertung" },
+        { text: "Super Service und Preis-Leistungsverhältnis. Habe zwei Schläger zum Besaiten plus neue Griffbänder abgegeben. Bin sehr zufrieden! Empfehlenswert.", author: "Flo O.", date: "Google Bewertung" }
+      ];
 
-        const elText = document.getElementById("reviewText");
-        const elMeta = document.getElementById("reviewMeta");
-        const elAuthor = document.getElementById("reviewAuthor");
-        const elDate = document.getElementById("reviewDate");
+      const elStars  = document.getElementById("reviewStars");
+      const elText   = document.getElementById("reviewText");
+      const elMeta   = document.getElementById("reviewMeta");
+      const elAuthor = document.getElementById("reviewAuthor");
+      const elDate   = document.getElementById("reviewDate");
 
-        let idx = Math.floor(Math.random() * reviews.length);
+      let idx = Math.floor(Math.random() * reviews.length);
 
-        function showReview(i){
-            const r = reviews[i];
-            elText.textContent = "“" + r.text + "”";
-            elAuthor.textContent = r.author;
-            elDate.textContent = r.date ? "• " + r.date : "";
-        }
+      function showReview(i){
+        const r = reviews[i];
+        elText.textContent = "“" + r.text + "”";
+        elAuthor.textContent = r.author;
+        elDate.textContent = r.date ? "• " + r.date : "";
+      }
 
-        showReview(idx);
+      showReview(idx);
 
-        const FADE_MS = 450;   // must match CSS duration
-        const ROTATE_MS = 6000;
+      const FADE_MS = 450;   // must match CSS duration
+      const ROTATE_MS = 6500;
 
-        setInterval(() => {
-            // fade out
-            elText.classList.add("review-hidden");
-            elMeta.classList.add("review-hidden");
+      setInterval(() => {
+        // fade out (stars + text + meta)
+        elStars.classList.add("review-hidden");
+        elText.classList.add("review-hidden");
+        elMeta.classList.add("review-hidden");
 
-            // wait for fade-out, then swap content
-            setTimeout(() => {
-            idx = (idx + 1) % reviews.length;
-            showReview(idx);
+        // wait for fade-out, then swap content
+        setTimeout(() => {
+          idx = (idx + 1) % reviews.length;
+          showReview(idx);
 
-            // force browser to apply new text before fading in (prevents “snap”)
-            requestAnimationFrame(() => {
-                elText.classList.remove("review-hidden");
-                elMeta.classList.remove("review-hidden");
-            });
-            }, FADE_MS);
-        }, ROTATE_MS);
+          // fade in
+          requestAnimationFrame(() => {
+            elStars.classList.remove("review-hidden");
+            elText.classList.remove("review-hidden");
+            elMeta.classList.remove("review-hidden");
+          });
+        }, FADE_MS);
+      }, ROTATE_MS);
     </script>
-
-
-    </body>
+  </body>
 </html>
