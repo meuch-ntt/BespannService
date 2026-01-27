@@ -158,7 +158,43 @@
                 0%, 100% { transform: scale(1); opacity: 0; }
                 45%      { transform: scale(1.06); opacity: .45; }
             }
-            </style>
+        
+            /* ===== REVIEWS SECTION ===== */
+            .reviews-section{ padding: 64px 16px; }
+            .reviews-wrap{ max-width: 980px; margin: 0 auto; }
+            .reviews-card{
+            background:#fff; border-radius:16px; padding:22px;
+            box-shadow:0 10px 28px rgba(0,0,0,.08);
+            }
+            .stars{ font-size:22px; letter-spacing:2px; margin:6px 0 10px 0; }
+            .review-text{ font-size: 1.05rem; margin: 0 0 12px 0; }
+            .review-meta{ margin: 0; opacity: .85; }
+            .review-meta span{ margin-left: 10px; opacity: .8; }
+            /* .review-actions{ margin-top: 14px; display:flex; gap:12px; flex-wrap:wrap; } */  
+
+            .stars{
+            font-size: 24px;
+            letter-spacing: 3px;
+            margin: 6px 0 12px 0;
+            color: #2ecc71; /* base green */
+            text-shadow:
+                0 0 6px rgba(46,204,113,.6),
+                0 0 14px rgba(46,204,113,.35);
+            }
+
+            /* ===== REVIEW FADE TRANSITION ===== */
+            .review-text,
+            .review-meta{
+            opacity: 1;
+            transition: opacity 0.45s ease-in-out;
+            will-change: opacity;
+            }
+
+            .review-hidden{
+            opacity: 0;
+            }
+
+        </style>
 
     </head>
 
@@ -232,7 +268,7 @@
 
 
 
-        <div class="w3-container" style="padding:128px 16px" id="about">
+        <div class="w3-container w3-light-grey" style="padding:128px 16px" id="about">
         <h3 class="w3-center">Das zeichnet uns aus!</h3>
         <div class="w3-row-padding w3-center" style="margin-top:64px">
 
@@ -337,8 +373,39 @@
         </div>
     </div>
 
+    <!-- GOOGLE REVIEWS (curated 5-star) -->
+    <div class="w3-light-grey reviews-section" id="reviews">
+    <div class="reviews-wrap">
+        <h3 class="w3-center">Kundenfeedback</h3>
 
-    <div class="w3-container w3-light-grey" style="padding:64px 16px" id="contact">
+        <div class="reviews-card">
+        <div class="stars" aria-label="5 Sterne Bewertung">★★★★★</div>
+
+        <p id="reviewText" class="review-text"></p>
+
+        <p class="review-meta" id="reviewMeta">
+        <strong id="reviewAuthor"></strong>
+        <span id="reviewDate"></span>
+        </p>
+
+
+        <!--
+        <div class="review-actions">
+            <a class="nav-btn nav-btn-tertiary"
+            target="_blank" rel="noopener"
+            href="https://www.google.com/search?q=Besaitungsservice+M%C3%BCnchen+TENNIS+%7C+BADMINTON&hl=de#cobssid=s&mpd=~355121560105272078/customers/reviews">
+            Alle Google-Bewertungen ansehen
+            </a>
+        </div>
+         -->
+        
+        </div>
+    </div>
+    </div>
+
+
+
+    <div class="w3-container" style="padding:64px 16px" id="contact">
         <h3 class="w3-center">Kontakt</h3>
         <p class="w3-center w3-large">Möchtest Du einen Termin zum Bespannen ausmachen? Oder hast Du Fragen? 
             <br> Schreib mir einfach eine Nachricht auf WhatsApp – wir melden uns schnellstmöglich zurück!</p>
@@ -369,7 +436,7 @@
     </div>
 
 
-   <div class="w3-container w3-center w3-large" style="padding:64px 16px" id="about">
+   <div class="w3-container w3-light-grey w3-center w3-large" style="padding:64px 16px" id="about">
     
     <h3 class="w3-center">Hochwertige Besaitungsmaschine: Babolat 3002 </h3>
             <p>
@@ -401,5 +468,53 @@
         <a href="datenschutz.html" style="margin: 0 20px" target="_blank"> Datenschutz</a>
     </footer>
     
+
+    <script>
+        const reviews = [
+            { text: "Mehdi ist sehr zuvorkommend und zuverlässig. Die Kommunikation verlief unkompliziert und reibungslos. Ich habe meinen Tennisschläger mit neuer Bespannung und inklusive neuem Griffband  in kürzester Zeit wieder abholen können. Ich bin wirklich sehr zufrieden mit dem Service und der Beratung. Preis Leistung ist super! Sehr zu empfehlen!", author: "Franka", date: "Google Bewertung" },
+            { text: "Bespannungstermin wurde kurzfristig und unkompliziert per Whatsapp vereinbart. Die Abholung am nächsten Tag war nach Anfrage möglich. Bespannung ist richtig gut geworden. Mehdi kennt sich gut aus und hat gute Vorschläge bzgl Stringtensions gegeben. Würde ihn jeden empfehlen.", author: "Can K.", date: "Google Bewertung" },
+            { text: "Sehr guter Service. Es war nach Anfrage sogar möglich den Schläger am nächsten Tag abzuholen. Freundlich und Entspannt.", author: "Lukas", date: "Google Bewertung" },
+            { text: "Super Service und Preis-Leistungsverhältnis. Habe zwei Schläger zum Besaiten plus neue Griffbänder abgegeben. Bin sehr zufrieden! Empfehlenswert.", author: "Flo O.", date: "Google Bewertung" }
+        ];
+
+        const elText = document.getElementById("reviewText");
+        const elMeta = document.getElementById("reviewMeta");
+        const elAuthor = document.getElementById("reviewAuthor");
+        const elDate = document.getElementById("reviewDate");
+
+        let idx = Math.floor(Math.random() * reviews.length);
+
+        function showReview(i){
+            const r = reviews[i];
+            elText.textContent = "“" + r.text + "”";
+            elAuthor.textContent = r.author;
+            elDate.textContent = r.date ? "• " + r.date : "";
+        }
+
+        showReview(idx);
+
+        const FADE_MS = 450;   // must match CSS duration
+        const ROTATE_MS = 6000;
+
+        setInterval(() => {
+            // fade out
+            elText.classList.add("review-hidden");
+            elMeta.classList.add("review-hidden");
+
+            // wait for fade-out, then swap content
+            setTimeout(() => {
+            idx = (idx + 1) % reviews.length;
+            showReview(idx);
+
+            // force browser to apply new text before fading in (prevents “snap”)
+            requestAnimationFrame(() => {
+                elText.classList.remove("review-hidden");
+                elMeta.classList.remove("review-hidden");
+            });
+            }, FADE_MS);
+        }, ROTATE_MS);
+    </script>
+
+
     </body>
 </html>
