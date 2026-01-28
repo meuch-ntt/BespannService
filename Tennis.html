@@ -1,239 +1,551 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Besaitung München</title>
+    <title>Besaitung München – Preise Tennis</title>
     <link rel="icon" type="image/x-icon" href="/Assets/Bespannung.ico" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Keep W3CSS for your existing layout helpers -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Raleway"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
     <style>
-      body,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: "Raleway", sans-serif;
+      body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+      body, html { height: 100%; line-height: 1.8; }
+      html { scroll-behavior: smooth; }
+
+      /* ===== HERO ===== */
+      .bgimg-hero{
+        background-position: center;
+        background-size: cover;
+        background-image: url("Assets/Tennis1.JPEG");
+        min-height: 46vh;
+        position: relative;
       }
 
-      body,
-      html {
-        height: 100%;
-        line-height: 1.8;
+      .hero-overlay{
+        position:absolute;
+        inset:0;
+        background: linear-gradient(90deg, rgba(0,0,0,.65), rgba(0,0,0,.15));
       }
 
-      .inline-elem {
-        display: inline-block;
+      /* bring buttons more to the left (like index) */
+      .hero-inner{
+        position: relative;
+        z-index: 2;
+        height: 46vh;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        text-shadow: 1px 0 10px black;
       }
 
-    .old-price {
-      text-decoration: line-through;
-      color: #888;
-      margin-right: 8px;
-      font-size: 18px;
-    }
+      @media (max-width: 800px){
+        .hero-inner{ padding: 32px 20px; }
+      }
+      @media (max-width: 600px){
+        .bgimg-hero{ min-height: 52vh; }
+        .hero-inner{ height: 52vh; padding: 28px 16px; }
+      }
 
-    .new-price {
-      color: #e53935;
-      font-weight: bold;
-      font-size: 26px;
-    }
+      /* ===== HERO NAV BUTTONS (index-like) ===== */
+      .hero-nav{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        justify-content: flex-start;
+      }
 
-    /* NEW STYLE FOR BLACK FRIDAY BANNER */
-    .bf-banner {
-        background-color: #000;
+      .nav-btn{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,.55);
         color: #fff;
-        padding: 40px 16px;
-        text-align: center;
-        border-bottom: 4px solid #f44336;
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: .2px;
+        background: rgba(0,0,0,.25);
+        backdrop-filter: blur(4px);
+        transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+        box-shadow: 0 6px 18px rgba(0,0,0,.25);
+        white-space: nowrap;
+      }
+
+      .nav-btn:hover{
+        transform: translateY(-2px);
+        background: rgba(0,0,0,.45);
+        border-color: rgba(255,255,255,.9);
+      }
+
+      .nav-btn-primary{
+        padding: 14px 20px;
+        font-size: 1.05rem;
+        border: 0;
+        background: linear-gradient(135deg, #2ecc71, #27ae60);
+        box-shadow: 0 10px 26px rgba(39,174,96,.38);
+        position: relative;
+      }
+
+      .nav-btn-primary:hover{
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 14px 32px rgba(39,174,96,.48);
+      }
+
+      .nav-btn-primary::after{
+        content: "";
+        position: absolute;
+        inset: -4px;
+        border-radius: 999px;
+        border: 2px solid rgba(46, 204, 113, .55);
+        opacity: 0;
+        animation: pulse 2.2s ease-in-out infinite;
+      }
+
+      .nav-btn-tertiary{
+        background: rgba(0,0,0,.18);
+        border: 1px solid rgba(255,255,255,.55);
+      }
+
+      /* ===== PRICING SECTION ===== */
+      .pricing-section{
+        padding: 56px 16px 40px 16px;
+      }
+
+      /* GRID: scales on large monitors, equal outside spacing + equal gaps */
+      .cards-grid{
+        display: grid;
+        grid-template-columns: repeat(3, minmax(280px, 1fr));
+        gap: clamp(16px, 2vw, 28px);
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 clamp(14px, 3vw, 34px);
+        align-items: stretch; /* equal height cards */
+      }
+
+      @media (max-width: 980px){
+        .cards-grid{ grid-template-columns: repeat(2, minmax(260px, 1fr)); }
+      }
+      @media (max-width: 640px){
+        .cards-grid{ grid-template-columns: 1fr; }
+      }
+
+      .price-card{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border-radius: 18px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 10px 28px rgba(0,0,0,.08);
+        border: 1px solid rgba(0,0,0,.06);
+        text-align: left;
+        position: relative;
+      }
+
+      .price-head{
+        padding: 18px 18px 14px 18px;
+        font-weight: 800;
+        letter-spacing: .2px;
+        display:flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        color:#fff;
+      }
+
+      /* calmer headers */
+      .price-head.basic{
+        background: linear-gradient(135deg, #2f2f36, #444452);
+      }
+      .price-head.pro{
+        background: linear-gradient(135deg, #2f3a4a, #3b4960);
+      }
+      .price-head.premium{
+        background: linear-gradient(135deg, #3a344f, #4a3f73);
+      }
+
+      .price-badge{
+        font-size: .85rem;
+        font-weight: 700;
+        opacity: .95;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(255,255,255,.16);
+        border: 1px solid rgba(255,255,255,.22);
+        white-space: nowrap;
+      }
+
+      /* BODY flex: pushes footer to bottom so price+button align across cards */
+      .price-body{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: clamp(14px, 1.6vw, 22px);
+      }
+
+      .price-list{
+        margin: 0;
+        padding-left: 18px;
+        flex: 1; /* takes remaining space */
+      }
+
+      .price-list li{
+        margin: 6px 0;
+      }
+
+      /* footer: price above button, both aligned same level across cards */
+      .card-footer{
+        margin-top: auto; /* pushes footer to bottom */
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(0,0,0,.06);
+      }
+
+      /* price to outer right */
+      .price-row{
+        display:flex;
+        align-items: baseline;
+        justify-content: flex-end;
+      }
+
+      .price-value-wrap{
+        display:flex;
+        align-items: baseline;
+        gap: 6px;
+      }
+
+      /* show "(ab)" just before the price */
+      .ab-tag{
+        font-weight: 800;
+        opacity: .75;
+        font-size: .95rem;
+      }
+
+      .price-row .value{
+        font-weight: 900;
+        font-size: clamp(1.55rem, 2vw, 1.9rem);
+        letter-spacing: .2px;
+      }
+
+      /* CTA: half size + centered */
+      .cta-wrap{
+        display: flex;
+        justify-content: center;
+      }
+
+      .price-cta{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        width: 60%;
+        padding: 10px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(0,0,0,.12);
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: .2px;
+        color: #111;
+        background: #fff;
+        box-shadow: 0 8px 18px rgba(0,0,0,.08);
+        transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      }
+
+      .price-cta:hover{
+        transform: translateY(-2px);
+        box-shadow: 0 12px 26px rgba(0,0,0,.12);
+        background: #f7f7f7;
+      }
+
+      /* ===== PRO “featured heat” effect ===== */
+      .price-card.featured{
+        transform: translateY(-2px);
+      }
+
+      .price-card.featured::before{
+        content:"";
+        position:absolute;
+        inset:-3px;
+        border-radius: 20px;
+        background: linear-gradient(120deg,
+          rgba(255,140,0,.0),
+          rgba(255,140,0,.55),
+          rgba(255,105,180,.45),
+          rgba(0,255,180,.35),
+          rgba(255,140,0,.55),
+          rgba(255,140,0,.0)
+        );
+        filter: blur(10px);
+        opacity: .7;
+        z-index: 0;
+        animation: heatGlow 2.6s ease-in-out infinite;
+        pointer-events:none;
+      }
+
+      .price-card.featured::after{
+        content:"";
+        position:absolute;
+        inset:0;
+        border-radius: 18px;
+        border: 2px solid rgba(255,140,0,.22);
+        z-index: 0;
+        animation: edgePulse 2.6s ease-in-out infinite;
+        pointer-events:none;
+      }
+
+      .price-card.featured > *{
+        position: relative;
+        z-index: 1;
+      }
+
+      @keyframes heatGlow{
+        0%,100% { opacity:.35; transform: translate3d(0,0,0) scale(1); }
+        50%     { opacity:.75; transform: translate3d(0,-1px,0) scale(1.01); }
+      }
+
+      @keyframes edgePulse{
+        0%,100% { border-color: rgba(255,140,0,.18); }
+        50%     { border-color: rgba(255,140,0,.42); }
+      }
+
+      /* ===== INFO SECTION separated from cards ===== */
+      .info-section{
+        margin-top: 28px;
+        padding: 26px 16px;
+        background: none;
+        border-top: 1px solid rgba(0,0,0,.06);
+        border-bottom: 1px solid rgba(0,0,0,.06);
+      }
+
+    .info-wrap{
+      max-width: 900px;     /* match intro paragraph width */
+      margin: 0 auto;
+      padding: 0;           /* no side padding */
     }
 
+      .accent-red{ color:#e05650; }
+
+      /* Footer */
+      .site-footer{
+        background: #2f2f2f;
+        color:#fff;
+        padding: 18px 16px;
+      }
+
+      .site-footer a{
+        color:#fff;
+        opacity:.9;
+        text-decoration:none;
+      }
+      .site-footer a:hover{ opacity: 1; }
+
+      .footer-actions{
+        margin-top: 10px;
+        padding-top: 8px;
+      }
+
+      .info-wrap p{
+        margin: 0;
+      }
+
+      .info-wrap p + p{
+        margin-top: 14px;   /* same rhythm as intro section */
+      }
 
 
     </style>
   </head>
 
   <body>
+    <!-- HERO -->
+    <header class="bgimg-hero w3-display-container" id="top">
+      <div class="hero-overlay"></div>
 
-    <!-- BLACK FRIDAY BANNER 
-    <div class="bf-banner" id="blackfriday">
-        <h2 style="font-weight: bold; letter-spacing: 2px;" class="w3-text-red">
-            🖤 BLACK FRIDAY SPECIAL 🖤
-        </h2>
-        <p class="w3-large">
-            Zeit für frische Saiten mit mehr Power 💥 / Spin 🌀 / Kontrolle 🎯 <br>
-            <b>Spare jetzt 5€</b> auf Deine neue Besaitung!*
-        </p>
-    </div>
-    -->
+      <div class="hero-inner w3-text-white">
+        <div class="hero-nav">
+          <a href="index.html#about" class="nav-btn nav-btn-tertiary">← Zurück zur Homepage</a>
 
-    <!-- Pricing Section -->
-    <div
-      class="w3-container w3-center w3-dark-grey"
-      style="padding: 40px 16px"
-      id="pricing"
-    >
-         
-      <!-- <h3><b>Preise</b></h3> -->
+          <a
+            href="https://wa.me/+491794241063?text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20eine%20neue%20Bespannung%20ausmachen.%20Meine%20Verf%C3%BCgbarkeit%20w%C3%A4re%20(BITTE%20TERMINE%20VORSCHLAGEN)%3A%0A-%20...%0A-%20...%0A%0ABitte%20um%20kurze%20R%C3%BCckmeldung!%20"
+            class="nav-btn nav-btn-primary"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fa fa-whatsapp" style="margin-right:8px;"></i>
+            Termin vereinbaren
+          </a>
+        </div>
+      </div>
+    </header>
 
-      <p class="w3-large" style="max-width: 900px; margin: 0 auto 40px auto;">
-          Finde die passende Saite für Deinen Spielstil – individuell abgestimmt auf Deine
-          Bedürfnisse. <br>
-          Ob Du besonderen Wert auf 
-          <b><span style="color: #f44336;">Armschonung</span></b>, maximalen 
-          <b><span style="color: #f44336;">Komfort</span></b>, mehr 
-          <b><span style="color: #f44336;">Spin</span></b> oder zusätzliche 
-          <b><span style="color: #f44336;">Power</span></b> legst: <br>
-          Wir haben für jede Spielart und jeden Anspruch die passenden Saiten.
+    <!-- PRICING -->
+    <div class="w3-container w3-light-grey w3-center pricing-section" id="pricing">
+      <p class="w3-large" style="max-width: 900px; margin: 0 auto 26px auto;">
+        Finde die passende Saite für Deinen Spielstil – individuell abgestimmt auf Deine Bedürfnisse.<br />
+        Ob Du besonderen Wert auf
+        <b><span class="accent-red">Armschonung</span></b>, maximalen
+        <b><span class="accent-red">Komfort</span></b>, mehr
+        <b><span class="accent-red">Spin</span></b> oder zusätzliche
+        <b><span class="accent-red">Power</span></b> legst: <br />
+        Wir haben für jede Spielart und jeden Anspruch die passenden Saiten.
       </p>
 
+      <!-- Basic + Pro + Premium -->
+      <div class="cards-grid" style="margin-top: 18px;">
+        <!-- BASIC -->
+        <div class="price-card">
+          <div class="price-head basic">
+            <div style="font-size:1.35rem;">Basic</div>
+            <div class="price-badge"><b>Allrounder</b> Modell</div>
+          </div>
 
-      <div class="w3-row-padding" style="margin-top: 32px">
-        <div class="w3-third w3-section">
-          <ul class="w3-ul w3-white w3-hover-shadow">
-            <li class="w3-black w3-xlarge w3-padding-32">Basic </li>
-            <li class="w3-padding-16">
-              Ich spiele nicht so oft, etwa <b>1-4 </b> im Monat
-            </li>
-            <li class="w3-padding-16">
-              meine Empfehlung: <b>Allrounder </b> Modell
-            </li>
+          <div class="price-body">
+            <ul class="price-list">
+              <li>ich spiele eher selten</li>
+              <li><b>keine </b> besondere Eigenschaft (Allrounder)</li>
+            </ul>
 
-            <li class="w3-padding-16">
-              <h2 class="w3-wide">25€</h2>
-            </li>
-            <li class="w3-light-grey w3-padding-24">
-              <a
-                href="index.html#contact"
-                class="w3-button w3-black w3-padding-large"
-                >Jetzt anfragen!</a
-              >
-            </li>
-          </ul>
+            <div class="card-footer">
+              <div class="price-row">
+                <div class="price-value-wrap">
+                  <span class="value">25€</span>
+                </div>
+              </div>
+
+              <div class="cta-wrap">
+                <a href="index.html#contact" class="price-cta">
+                  Jetzt anfragen
+                  <i class="fa fa-whatsapp" style="margin-left:8px;"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
         </div>
 
-        <div class="w3-third">
-          <ul class="w3-ul w3-white w3-hover-shadow">
-            <li class="w3-red w3-xlarge w3-padding-48">Pro</li>
-            <li class="w3-padding-16">
-              ich spiele regelmäßig, etwa <b> 1-2 </b> pro Woche
-            </li>
+        <!-- PRO (featured) -->
+        <div class="price-card featured">
+          <div class="price-head pro">
+            <div style="font-size:1.35rem;">Pro</div>
+            <div class="price-badge">beliebteste Wahl</div>
+          </div>
 
-            <li class="w3-padding-16">
-              Haupteigenschaften je nach Modell: <br />
-              <b>Kontrolle: </b> für mehr Präzision <br />
-              <b>Power: </b> für mehr Schnelligkeit <br />
-              <b>Spin: </b> für Topspin Spieler <br />
-              <b>Confort: </b> perfekte gegen Tennis-Ellbogen 
-            </li>
+          <div class="price-body">
+            <ul class="price-list">
+              <li>ich spiele öfter / regelmäßig</li>
+              <li>
+                Haupteigenschaften je nach Modell: <br />
+                <b>Kontrolle: </b> für mehr Präzision <br />
+                <b>Power: </b> für mehr Schnelligkeit <br />
+                <b>Spin: </b> für Topspin Spieler <br />
+                <b>Confort: </b> perfekte gegen Tennis-Ellbogen
+              </li>
+            </ul>
 
-            <li class="w3-padding-16 flex-container">
-              <p class="inline-elem">
-                ab <h2 class="w3-wide" style="display: inline;"> 32€</h2>
-              </p>
-              <!--<span class="old-price">32€</span> 
-              <span class="new-price">32€</span> -->
-            </li>
+            <div class="card-footer">
+              <div class="price-row">
+                <div class="price-value-wrap">
+                  <span class="ab-tag">(ab)</span>
+                  <span class="value">32€</span>
+                </div>
+              </div>
 
-            <li class="w3-light-grey w3-padding-24">
-              <a
-                href="index.html#contact"
-                class="w3-button w3-black w3-padding-large"
-                >Jetzt anfragen!</a
-              >
-            </li>
-          </ul>
+            <div class="cta-wrap">
+              <a href="index.html#contact" class="price-cta">
+                Jetzt anfragen
+                <i class="fa fa-whatsapp" style="margin-left:8px;"></i>
+              </a>
+            </div>
+
+            </div>
+          </div>
         </div>
 
-        <div class="w3-third w3-section">
-          <ul class="w3-ul w3-white w3-hover-shadow">
-            <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
-            <li class="w3-padding-16">
-              ich spiele regelmäßig, etwa <b> 1-2 </b> pro Woche
-            </li>
-            <li class="w3-padding-16">
-              Haupteigenschaften je nach Modell:<br />
-              <b>Kontrolle: </b> für mehr Präzision <br />
-              <b>Power: </b> für mehr Schnelligkeit <br />
-              <b>Spin: </b> für Topspin Spieler <br />
-              <b>Confort: </b> perfekte gegen Tennis-Ellbogen 
-            </li>
-            <li class="w3-padding-16 flex-container">
-              <p class="inline-elem">
-                ab <h2 class="w3-wide" style="display: inline;"> 37€</h2>
-              </p>
-              <!--<span class="old-price">39€</span> 
-              <span class="new-price">34€</span> -->
-            </li>
+        <!-- PREMIUM -->
+        <div class="price-card">
+          <div class="price-head premium">
+            <div style="font-size:1.35rem;">Premium</div>
+            <div class="price-badge">max. Performance</div>
+          </div>
 
-            <li class="w3-light-grey w3-padding-24">
-              <a
-                href="index.html#contact"
-                class="w3-button w3-black w3-padding-large"
-                >Jetzt anfragen!</a
-              >
-            </li>
-          </ul>
+          <div class="price-body">
+            <ul class="price-list">
+              <li>ich spiele regelmäßig</li>
+              <li>
+                Haupteigenschaften je nach Modell:<br />
+                <b>Kontrolle: </b> für mehr Präzision <br />
+                <b>Power: </b> für mehr Schnelligkeit <br />
+                <b>Spin: </b> für Topspin Spieler <br />
+                <b>Confort: </b> perfekte gegen Tennis-Ellbogen
+              </li>
+              <li><b>Beste </b>Saitenqualität für <b>höchste </b>Ansprüche</li>
+            </ul>
+
+            <div class="card-footer">
+              <div class="price-row">
+                <div class="price-value-wrap">
+                  <span class="ab-tag">(ab)</span>
+                  <span class="value">37€</span>
+                </div>
+              </div>
+
+            <div class="cta-wrap">
+              <a href="index.html#contact" class="price-cta">
+                Jetzt anfragen
+                <i class="fa fa-whatsapp" style="margin-left:8px;"></i>
+              </a>
+            </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <br />
+      <!-- separated info block -->
+      <div class="info-section">
+        <div class="info-wrap">
+          <p class="w3-large" style="margin: 0;">
+            Dein Schläger ist in der Regel innerhalb von
+            <b><span class="accent-red">48 Stunden</span></b> abholbereit.
+            <br />
+            Du brauchst ihn schneller? Mit unserem Express-Service
+            (<b><span class="accent-red">+5€</span></b>)
+            ist die Besaitung bereits nach
+            <b><span class="accent-red">24 Stunden</span></b> fertig.
+          </p>
 
-      <p class="w3-large" style="margin-top: 30px;">
-        Dein Schläger ist in der Regel innerhalb von 
-        <b><span style="color: #f44336;">48 Stunden</span></b> abholbereit. 
-        <br>
-        Du brauchst ihn schneller? Mit unserem Express-Service 
-        (<b><span style="color: #f44336;">+5€</span></b>) 
-        ist die Besaitung bereits nach 
-        <b><span style="color: #f44336;">24 Stunden</span></b> fertig.
-      </p>
-
-
-      <p class="w3-large" style="margin-top: 30px;">
-        Bespannservice mit eigenen Saiten ist ebenfalls möglich und kostet <b>25€</b>.
-      </p>
-
+          <p class="w3-large" style="margin: 14px 0 0 0;">
+            Bespannservice mit eigenen Saiten ist ebenfalls möglich und kostet <b>25€</b>.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="w3-center w3-black w3-padding-32">
-      <!-- Bkack Friday Note 
-      <p class="w3-small w3-text-grey" style="font-style: italic; margin-bottom: 16px;">
-          *5€ Rabatt auf den regulären Preis. Angebot gilt, solange der Vorrat reicht.
-      </p> 
-      -->
-    
+    <!-- FOOTER -->
+    <footer class="w3-center site-footer">
+      <div class="footer-actions">
+        <a href="index.html#contact" class="w3-button w3-light-grey" style="border-radius:999px; margin-right:10px;">
+          Kontakt aufnehmen
+        </a>
+        <a href="index.html" class="w3-button w3-light-grey" style="border-radius:999px;">
+          Zurück zur Homepage
+        </a>
+      </div>
 
-      <a href="index.html#contact" class="w3-button w3-light-grey"
-        >Kontakt aufnehmen</a
-      >
-      <a
-        href="index.html"
-        class="w3-button w3-light-grey"
-        style="margin: 0 20px"
-        >Zurück zur Homepage</a
-      >
-      <div class="w3-xlarge w3-section">
-        <a
-          class="fa fa-instagram w3-hover-opacity"
-          style="margin-right: 10px"
-          href="https://www.instagram.com/mehdis_tennis/profilecard/?igsh=MWcwcndlMDBweDc4MQ=="
-        ></a>
-        <a
-          class="fa fa-whatsapp w3-hover-opacity"
-          style="margin-right: 10px"
-          href="https://wa.me/+491794241063"
-        ></a>
+      <div class="w3-xlarge" style="margin-top: 14px;">
+        <a class="fa fa-instagram w3-hover-opacity" style="margin-right: 10px"
+          href="https://www.instagram.com/mehdis_tennis/profilecard/?igsh=MWcwcndlMDBweDc4MQ=="></a>
+        <a class="fa fa-whatsapp w3-hover-opacity" style="margin-right: 10px" href="https://wa.me/+491794241063"></a>
       </div>
     </footer>
   </body>
