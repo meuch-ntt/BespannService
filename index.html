@@ -250,6 +250,12 @@
         display: block;
       }
 
+      /* Optional: nur Bilder leicht entsättigen, Logo bleibt clean */
+      .w3-card > img:not(.card-logo),
+      .card-image img:not(.card-logo){
+        filter: grayscale(70%);
+      }
+
       /* Logo overlay */
       .w3-card > img.card-logo{
         position: absolute;
@@ -375,7 +381,7 @@
     <div class="w3-container" style="padding:32px 16px; padding-bottom:128px" id="team">
       <h3 class="w3-center">Bespannservice & mehr!</h3>
 
-        <div class="w3-row-padding w3-grayscale-min card-wrapper" style="margin-top:64px; display:flex; justify-content:space-between;">
+        <div class="w3-row-padding card-wrapper" style="margin-top:64px; display:flex; justify-content:space-between;">
         <div class="w3-col l3 m6 w3-margin-bottom card-item">
           <div class="w3-card">
             <img src="Assets/Tennis2.JPEG" alt="tennisCard" style="width:100%" />
