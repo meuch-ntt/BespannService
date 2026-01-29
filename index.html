@@ -256,35 +256,55 @@
         filter: grayscale(70%);
       }
 
-      /* Logo overlay */
-      .w3-card > img.card-logo{
+      /* Logo overlay (flush to image/card edge) */
+      .card-image{
+        position: relative;      /* anchor for logo */
+        overflow: hidden;        /* keeps everything inside */
+      }
+
+      .card-image img:not(.card-logo){
+        width: 100%;
+        display: block;
+      }
+
+      /* Logo sits EXACTLY on the top-right edge */
+      .card-image .card-logo{
         position: absolute;
-        top: -14px;          /* slightly outside the card */
-        right: -14px;
+        top: 0;
+        right: 0;
 
-        width: 84px;
-        height: 84px;
+        width: 72px;
+        height: 72px;
+
         object-fit: contain;
-
         border-radius: 50%;
-        background: none;
+        background: transparent;
         padding: 0;
+        margin: 0;
 
         z-index: 5;
+        filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
+      }
 
-        filter: drop-shadow(0 8px 18px rgba(0,0,0,.45));
+      @media (max-width: 600px){
+        .card-image .card-logo{
+          width: 56px;
+          height: 56px;
+          top: 0;
+          right: 0;
+        }
       }
 
 
       @media (max-width: 600px){
         .w3-card > img.card-logo{
-          width: 64px;
-          height: 64px;
-          top: -10px;
-          right: -10px;
+          width: 56px;
+          height: 56px;
+
+          top: 6px;      /* exact inner edge */
+          right: 6px;    /* exact inner edge */
         }
       }
-
     
     </style>
   </head>
@@ -425,10 +445,8 @@
           <div class="w3-card">
             <div class="card-image">
               <img src="Assets/Badminton2.JPEG" alt="badmintonCard" />
+              <img src="Assets/Bespannung.png" alt="Logo" class="card-logo" />
             </div>
-
-            <img src="Assets/Bespannung.png" alt="Logo" class="card-logo" />
-
             <div class="w3-container flex-container">
               <h3>Tennis-Training</h3>
               <p>
