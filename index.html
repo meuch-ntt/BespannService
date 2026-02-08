@@ -59,7 +59,19 @@
         height: 100%;
         display: flex;
         flex-direction: column;
+
+        /* ✅ remove W3CSS card grey background */
+        background: transparent !important;
       }
+
+    #team .w3-card{
+      background: #fff !important;
+      border: 1px solid rgba(0,0,0,.12) !important;
+      box-shadow: none !important;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
 
       .w3-container { flex-grow: 1; }
 
@@ -250,11 +262,12 @@
         display: block;
       }
 
-      /* Optional: nur Bilder leicht entsättigen, Logo bleibt clean */
-      .w3-card > img:not(.card-logo),
-      .card-image img:not(.card-logo){
-        filter: grayscale(70%);
+      /* ✅ keep real colors on card images */
+      #team .w3-card img,
+      #team .card-image img{
+        filter: none !important;
       }
+
 
       /* Logo overlay (flush to image/card edge) */
       .card-image{
@@ -341,7 +354,7 @@
       <script>
         const bgElement = document.querySelector(".bgimg-1");
 
-        const images = ["Assets/Tennis1.JPEG", "Assets/Badminton1.JPEG"];
+        const images = ["Assets/Tennis1.JPEG", "Assets/BespannService.JPEG"];
         let currentIndex = 0;
 
         const preloadImages = images.map((image) => {
@@ -418,6 +431,7 @@
       <h3 class="w3-center">Bespannservice & mehr!</h3>
 
         <div class="w3-row-padding card-wrapper" style="margin-top:64px; display:flex; justify-content:space-between;">
+
         <div class="w3-col l3 m6 w3-margin-bottom card-item">
           <div class="w3-card">
             <img src="Assets/Tennis2.JPEG" alt="tennisCard" style="width:100%" />
@@ -460,7 +474,7 @@
         <div class="w3-col l3 m6 w3-margin-bottom card-item">
           <div class="w3-card">
             <div class="card-image">
-              <img src="Assets/Badminton2.JPEG" alt="badmintonCard" />
+              <img src="Assets/myFoto2026.JPG" alt="badmintonCard" />
               <img src="Assets/Bespannung.png" alt="Logo" class="card-logo" />
             </div>
             <div class="w3-container flex-container">
