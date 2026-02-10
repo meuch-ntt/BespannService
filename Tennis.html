@@ -364,11 +364,6 @@
       }
     </style>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2893913946778603"
-        crossorigin="anonymous">
-    </script>
-
-
   </head>
 
   <!-- Google tag (gtag.js) -->
@@ -544,60 +539,6 @@
         </div>
       </div>
     </div>
-
-    <!-- GOOGLE ADS (hidden if no ad is filled) -->
-    <div id="ads-section" class="w3-container w3-light-grey" style="padding:12px 16px; display:none;">
-      <div style="max-width:980px;margin:0 auto; text-align:center;">
-        <small style="opacity:.55; font-size:11px; display:block; margin-bottom:6px;">Werbung</small>
-
-        <ins id="adsbygoogle-slot" class="adsbygoogle"
-          style="display:block; width:100%; min-height:60px;"
-          data-ad-client="ca-pub-2893913946778603"
-          data-ad-slot="1234567890"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-      </div>
-    </div>
-
-    <script>
-      // Request the ad
-      (adsbygoogle = window.adsbygoogle || []).push({});
-
-      // Reveal section ONLY if ad is actually filled
-      (function showAdSectionIfFilled() {
-        const section = document.getElementById("ads-section");
-        const ad = document.getElementById("adsbygoogle-slot");
-
-        let checks = 0;
-        const maxChecks = 10; // ~5 seconds
-
-        const timer = setInterval(() => {
-          checks++;
-
-          const filled =
-            ad?.getAttribute("data-ad-status") === "filled" ||
-            ad?.offsetHeight > 0;
-
-          if (filled) {
-            section.style.display = "block";
-            clearInterval(timer);
-          }
-
-          // Stop checking after timeout (keep hidden if no ad)
-          if (checks >= maxChecks) clearInterval(timer);
-        }, 500);
-      })();
-    </script>
-
-    <style>
-      /* Reserve more space on desktop once visible (CLS-safe) */
-      @media (min-width: 992px){
-        .adsbygoogle{ min-height: 90px !important; }
-      }
-    </style>
-
-
-
 
     <!-- FOOTER -->
     <footer class="w3-center site-footer">

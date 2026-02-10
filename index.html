@@ -319,12 +319,51 @@
         }
       }
     
+      /* ===== FAQ GRID ===== */
+      .faq-grid{
+        max-width: 1100px;
+        margin: 40px auto 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        text-align: left;
+      }
+
+      .faq-item{
+        background: #fff;
+        border: 1px solid rgba(0,0,0,.1);
+        border-radius: 16px;
+        padding: 22px;
+        box-shadow: 0 8px 22px rgba(0,0,0,.06);
+      }
+
+      .faq-item h4{
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-weight: 700;
+      }
+
+      .faq-item p{
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      /* Tablet */
+      @media (max-width: 992px){
+        .faq-grid{
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* Mobile */
+      @media (max-width: 600px){
+        .faq-grid{
+          grid-template-columns: 1fr;
+        }
+      }
+
+
     </style>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2893913946778603"
-        crossorigin="anonymous">
-    </script>
-
 
   </head>
 
@@ -383,17 +422,20 @@
         <div class="hero-nav">
           <a href="#about" class="nav-btn nav-btn-primary">Mehr erfahren</a>
 
-          <a href="Tennis.html" class="nav-btn nav-btn-tertiary">Bespannservice & Preise</a>
+          <a href="Tennis.html" class="nav-btn nav-btn-tertiary">Bespannservice & Preise</a> 
 
+          <!--
           <a
             href="https://wa.me/+491794241063?text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20eine%20neue%20Bespannung%20ausmachen.%20Meine%20Verf%C3%BCgbarkeit%20w%C3%A4re%20(BITTE%20TERMINE%20VORSCHLAGEN)%3A%0A-%20...%0A-%20...%0A%0ABitte%20um%20kurze%20R%C3%BCckmeldung!%20"
             class="nav-btn nav-btn-tertiary"
             target="_blank"
             rel="noopener"
           >
+          
             <i class="fa fa-whatsapp" style="margin-right:8px;"></i>
             Termin vereinbaren
           </a>
+          -->
         </div>
       </div>
     </header>
@@ -567,7 +609,8 @@
       </div>
     </div>
 
-    <div class="w3-container w3-light-grey w3-center w3-large" style="padding:32px 16px" id="about">
+
+    <div class="w3-container w3-light-grey w3-center w3-large" style="padding:32px 16px" id="machine">
       <h3 class="w3-center">Hochwertige Besaitungsmaschine: Babolat 3002</h3>
       <p>
         <a href="Maschine.html" target="_blank">mehr über die Maschine</a>
@@ -575,63 +618,48 @@
       </p>
     </div>
 
-    <!-- GOOGLE ADS (hidden if no ad is filled) -->
-    <div id="ads-section" class="w3-container w3-light-grey" style="padding:12px 16px; display:none;">
-      <div style="max-width:980px;margin:0 auto; text-align:center;">
-        <small style="opacity:.55; font-size:11px; display:block; margin-bottom:6px;">Werbung</small>
+    <div class="w3-container" style="padding:32px 16px" id="machine">
+      <h3 class="w3-center">FAQ – häufige Fragen</h3>
 
-        <ins id="adsbygoogle-slot" class="adsbygoogle"
-          style="display:block; width:100%; min-height:60px;"
-          data-ad-client="ca-pub-2893913946778603"
-          data-ad-slot="1234567890"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
+      <div class="w3-row-padding w3-center faq-features" style="margin-top:32px">
+
+        <div class="w3-quarter">
+          <p class="w3-large" style="margin-bottom:6px;">Ablauf?</p>
+          <p style="margin-top:0;">
+            1. Kontaktaufnahme (am besten per WhatsApp)<br>
+            2. Schnelle Terminbestätigung<br>
+            3. Schläger abgeben<br>
+            4. Schläger abholen
+          </p>
+        </div>
+
+        <div class="w3-quarter">
+          <p class="w3-large" style="margin-bottom:6px;">Dauer?</p>
+          <p style="margin-top:0;">
+            Die Bespannung dauert
+            <b>2–4 Tage</b> <br> abhängig von der Auslastung.
+          </p>
+        </div>
+
+        <div class="w3-quarter">
+          <p class="w3-large" style="margin-bottom:6px;">Express-Service?</p>
+          <p style="margin-top:0;">
+            Abholung am nächsten Tag ist nach Absprache möglich (<b>+5 €</b> Aufpreis).
+          </p>
+        </div>
+
+        <div class="w3-quarter">
+          <p class="w3-large" style="margin-bottom:6px;">Preis?</p>
+          <p style="margin-top:0;">
+            <b>25–37 €</b><br>
+            Je nach Saitenqualität und Spieleigenschaften.
+          </p>
+        </div>
+
       </div>
     </div>
 
-    <script>
-      // Request the ad
-      (adsbygoogle = window.adsbygoogle || []).push({});
 
-      // Reveal section ONLY if ad is actually filled
-      (function showAdSectionIfFilled() {
-        const section = document.getElementById("ads-section");
-        const ad = document.getElementById("adsbygoogle-slot");
-
-        let checks = 0;
-        const maxChecks = 10; // ~5 seconds
-
-        const timer = setInterval(() => {
-          checks++;
-
-          const filled =
-            ad?.getAttribute("data-ad-status") === "filled" ||
-            ad?.offsetHeight > 0;
-
-          if (filled) {
-            section.style.display = "block";
-            clearInterval(timer);
-          }
-
-          // Stop checking after timeout (keep hidden if no ad)
-          if (checks >= maxChecks) clearInterval(timer);
-        }, 500);
-      })();
-    </script>
-
-    <style>
-      /* Reserve more space on desktop once visible (CLS-safe) */
-      @media (min-width: 992px){
-        .adsbygoogle{ min-height: 90px !important; }
-      }
-    </style>
-
-    <style>
-      /* Match tennis.html: desktop reserve height */
-      @media (min-width: 992px){
-        .adsbygoogle{ min-height: 90px !important; }
-      }
-    </style>
 
 
     <footer class="w3-center w3-dark-grey w3-padding-16">
