@@ -96,6 +96,7 @@
         border-bottom: 4px solid #f44336;
       }
 
+      
       /* ===== HERO NAV BUTTONS ===== */
       .hero-nav{
         margin-top: 22px;
@@ -123,6 +124,52 @@
         white-space: nowrap;
       }
 
+
+      /* ===== TOP RIGHT HAMBURGER NAV ===== */
+      .top-nav{
+        position: fixed;
+        top: calc(18px + env(safe-area-inset-top));
+        right: calc(18px + env(safe-area-inset-right));
+        z-index: 9999;
+      }
+
+      .menu-toggle{
+        font-size: 28px;
+        color: #fff;
+        cursor: pointer;
+        background: rgba(0,0,0,.35);
+        backdrop-filter: blur(6px);
+        padding: 8px 14px;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(0,0,0,.25);
+      }
+
+      .menu-dropdown{
+        display: none;
+        position: absolute;
+        right: 0;
+        margin-top: 10px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,.15);
+        overflow: auto;                 /* ✅ allow scroll if needed */
+        -webkit-overflow-scrolling: touch;
+        min-width: 240px;
+        max-height: calc(100vh - 110px); /* ✅ never cut off on mobile */
+      }
+
+      .menu-dropdown a{
+        display: block;
+        padding: 12px 16px;
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .menu-dropdown a:hover{
+        background: #f3f3f3;
+      }
 
       /* ===== CARD CTA (same style as nav-btn-primary) ===== */
       .card-btn{
@@ -392,6 +439,19 @@
     </div>
     -->
 
+    <!-- TOP RIGHT HAMBURGER NAV -->
+    <div class="top-nav" id="topNav">
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <div class="menu-dropdown" id="menuDropdown">
+        <a href="#about">Das zeichnet uns aus</a>
+        <a href="#team">Angebote</a>
+        <a href="#reviews">Kundenfeedback</a>
+        <a href="#contact">Kontakt</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+
+
     <header class="bgimg-1 w3-display-container filter-me" id="home">
       <script>
         const bgElement = document.querySelector(".bgimg-1");
@@ -423,27 +483,45 @@
 
         <!-- NAV BUTTONS -->
         <div class="hero-nav">
-          <a href="#about" class="nav-btn nav-btn-primary">Mehr erfahren</a>
+          <a href="#intro" class="nav-btn nav-btn-primary">Mehr erfahren</a>
 
           <a href="Tennis.html" class="nav-btn nav-btn-tertiary">Bespannservice & Preise</a> 
 
-          <!--
-          <a
-            href="https://wa.me/+491794241063?text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20eine%20neue%20Bespannung%20ausmachen.%20Meine%20Verf%C3%BCgbarkeit%20w%C3%A4re%20(BITTE%20TERMINE%20VORSCHLAGEN)%3A%0A-%20...%0A-%20...%0A%0ABitte%20um%20kurze%20R%C3%BCckmeldung!%20"
-            class="nav-btn nav-btn-tertiary"
+          <a href="https://www.google.com/maps/dir//Constanze%20Hallgarten%20Stra%C3%9Fe%2056,%2081379%20M%C3%BCnchen" 
             target="_blank"
-            rel="noopener"
-          >
-          
-            <i class="fa fa-whatsapp" style="margin-right:8px;"></i>
-            Termin vereinbaren
+            class="nav-btn nav-btn-tertiary">
+            <i class="fa fa-map-marker fa-fw" style="margin-right:8px;"></i>
+            Anfahrt
           </a>
-          -->
+        </p>
+
         </div>
       </div>
     </header>
 
-    <div class="w3-container w3-light-grey" style="padding:64px 16px" id="about">
+
+    <div class="w3-container" style="padding:32px 16px; background-color: #fff;" id="intro">
+      <div class="article-section">
+        <h2 class="w3-center">Wissenswertes über Tennisbesaitung</h2>
+        <p>
+          Eine frische Bespannung sorgt nicht nur für mehr <strong>Kontrolle und Power</strong>, sondern schützt auch aktiv vor <b>Verletzungen wie dem Tennisarm</b>. 
+          <br>Selbst wenn die Saite nicht reißt, verliert sie mit der Zeit an <b>Elastizität und Spannkraft</b>. Infolgedessen ändert der Spieler unbewusst seine <b>Technik</b>, um den Kontrollverlust auszugleichen.
+        </p>
+        <h4>Wie oft sollte man die Saiten wechseln?</h4>
+        <p>
+            Eine pauschale Antwort gibt es nicht – sie hängt von Spielhäufigkeit und Intensität ab. Profispieler verwenden teilweise
+            mehrere Bespannungen innerhalb eines einzigen Matches. 
+            Meine Empfehlung:
+          </p>
+        <ul>
+          <li><strong>Hobby-Spieler:</strong> Mindestens 2-mal pro Jahr zum Saison-Beginn (Sommer/Winter).</li>
+          <li><strong>Regelmäßige Spieler:</strong> Alle 4-6 Wochen für konstantes Feedback.</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="w3-container w3-light-grey" style="padding:32px 16px" id="about">
       <h3 class="w3-center">Das zeichnet uns aus!</h3>
       <div class="w3-row-padding w3-center" style="margin-top:64px">
         <div class="w3-quarter">
@@ -461,7 +539,7 @@
         <div class="w3-quarter">
           <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
           <p class="w3-large">Qualität</p>
-          <p>Dank der elektrischen Bespannungsmaschine garantieren wir <b>präzise Bespannung</b> und erstklassige Qualität für optimale Performance</p>
+          <p>Die elektrische Babolat-Bespannungsmaschine und <b>hochwertige</b> Saiten namhafter Hersteller ermöglichen <b>präzise Bespannung</b> für optimale Performance. </p>
         </div>
 
         <div class="w3-quarter">
@@ -473,7 +551,7 @@
     </div>
 
     <div class="w3-container" style="padding:32px 16px; padding-bottom:128px" id="team">
-      <h3 class="w3-center">Bespannservice & mehr!</h3>
+      <h3 class="w3-center">Angebote</h3>
 
         <div class="w3-row-padding card-wrapper" style="margin-top:64px; display:flex; justify-content:space-between;">
 
@@ -492,7 +570,7 @@
               </p>
               <p class="flex-end">
                 <a href="Tennis.html" class="w3-button card-btn">
-                  Zu den Angeboten
+                  Bespannservice & Preise
                 </a>
               </p>
             </div>
@@ -621,7 +699,7 @@
       </p>
     </div>
 
-    <div class="w3-container" style="padding:32px 16px" id="machine">
+    <div class="w3-container" style="padding:32px 16px" id="faq">
       <h3 class="w3-center">FAQ – häufige Fragen</h3>
 
       <div class="w3-row-padding w3-center faq-features" style="margin-top:32px">
@@ -721,5 +799,63 @@
         }, FADE_MS);
       }, ROTATE_MS);
     </script>
+
+
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("menuDropdown");
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+      }
+
+      // Close menu when clicking outside
+      window.addEventListener("click", function(e) {
+        const menu = document.getElementById("menuDropdown");
+        const toggle = document.querySelector(".menu-toggle");
+        if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+          menu.style.display = "none";
+        }
+      });
+
+      let lastScrollTop = 0;
+      const scrollThreshold = 20; // how much user must scroll before hiding
+
+      window.addEventListener("scroll", function() {
+        const menu = document.getElementById("menuDropdown");
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        const scrollDistance = Math.abs(currentScroll - lastScrollTop);
+
+        // Only hide if user scrolls more than threshold
+        if (menu && menu.style.display === "block" && scrollDistance > scrollThreshold) {
+          menu.style.display = "none";
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      }, { passive: true });
+    </script>
+
+    <script>
+      // Show hamburger ONLY while header (#home) is visible
+      const headerEl = document.getElementById("home");
+      const topNavEl = document.getElementById("topNav");
+      const menuEl = document.getElementById("menuDropdown");
+
+      if (headerEl && topNavEl) {
+        const observer = new IntersectionObserver((entries) => {
+          const headerVisible = entries[0].isIntersecting;
+
+          // show only inside header view
+          topNavEl.style.display = headerVisible ? "block" : "none";
+
+          // close dropdown when leaving header
+          if (!headerVisible && menuEl) {
+            menuEl.style.display = "none";
+          }
+        }, { threshold: 0.05 }); // 5% header visible = show
+        observer.observe(headerEl);
+      }
+    </script>
+
+
   </body>
 </html>
