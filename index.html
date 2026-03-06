@@ -24,11 +24,29 @@
 
       /* Full height image header */
       .bgimg-1 {
+        position: relative;
+        min-height: 100%;
+        overflow: hidden;
+        z-index: 0;
+      }
+
+      .bg-layer{
+        position: absolute;
+        inset: 0;
         background-position: center;
         background-size: cover;
-        background-image: url("Assets/Tennis1.JPEG");
-        min-height: 100%;
-        transition: background-image 1s ease-in-out;
+        background-repeat: no-repeat;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .bg-layer-1{
+        opacity: 1;
+        z-index: -2;
+      }
+
+      .bg-layer-2{
+        opacity: 0;
+        z-index: -1;
       }
 
       .w3-bar .w3-button { padding: 16px; }
@@ -55,23 +73,20 @@
       }
 
       .w3-card {
-        position: relative;   /* anchor for logo */
+        position: relative;
         height: 100%;
         display: flex;
         flex-direction: column;
-
-        /* ✅ remove W3CSS card grey background */
         background: transparent !important;
       }
 
-    #team .w3-card{
-      background: #fff !important;
-      border: 1px solid rgba(0,0,0,.12) !important;
-      box-shadow: none !important;
-      border-radius: 16px;
-      overflow: hidden;
-    }
-
+      #team .w3-card{
+        background: #fff !important;
+        border: 1px solid rgba(0,0,0,.12) !important;
+        box-shadow: none !important;
+        border-radius: 16px;
+        overflow: hidden;
+      }
 
       .w3-container { flex-grow: 1; }
 
@@ -87,7 +102,6 @@
         .w3-hide-small { display: block; }
       }
 
-      /* NEW STYLE FOR BLACK FRIDAY BANNER */
       .bf-banner {
         background-color: #000;
         color: #fff;
@@ -96,8 +110,6 @@
         border-bottom: 4px solid #f44336;
       }
 
-      
-      /* ===== HERO NAV BUTTONS ===== */
       .hero-nav{
         margin-top: 22px;
         display: flex;
@@ -124,8 +136,6 @@
         white-space: nowrap;
       }
 
-
-      /* ===== TOP RIGHT HAMBURGER NAV ===== */
       .top-nav{
         position: fixed;
         top: calc(18px + env(safe-area-inset-top));
@@ -152,10 +162,10 @@
         background: #fff;
         border-radius: 12px;
         box-shadow: 0 10px 30px rgba(0,0,0,.15);
-        overflow: auto;                 /* ✅ allow scroll if needed */
+        overflow: auto;
         -webkit-overflow-scrolling: touch;
         min-width: 240px;
-        max-height: calc(100vh - 110px); /* ✅ never cut off on mobile */
+        max-height: calc(100vh - 110px);
       }
 
       .menu-dropdown a{
@@ -171,7 +181,6 @@
         background: #f3f3f3;
       }
 
-      /* ===== CARD CTA (same style as nav-btn-primary) ===== */
       .card-btn{
         display: inline-flex;
         align-items: center;
@@ -184,13 +193,9 @@
         font-weight: 600;
         letter-spacing: .2px;
         color: #fff;
-
         background: linear-gradient(135deg, #2ecc71, #27ae60);
         box-shadow: 0 10px 26px rgba(39,174,96,.38);
-
-        transition:
-          transform .15s ease,
-          box-shadow .15s ease;
+        transition: transform .15s ease, box-shadow .15s ease;
       }
 
       .card-btn:hover{
@@ -198,7 +203,6 @@
         box-shadow: 0 14px 32px rgba(39,174,96,.48);
       }
 
-      
       .nav-btn:hover{
         transform: translateY(-2px);
         background: rgba(0,0,0,.45);
@@ -229,7 +233,6 @@
         animation: pulse 2.2s ease-in-out infinite;
       }
 
-      /* You used nav-btn-tertiary in HTML — define it */
       .nav-btn-tertiary{
         background: rgba(0,0,0,.18);
         border: 1px solid rgba(255,255,255,.55);
@@ -240,7 +243,6 @@
         45%      { transform: scale(1.06); opacity: .45; }
       }
 
-      /* ===== REVIEWS SECTION ===== */
       .reviews-section{ padding: 64px 16px; }
       .reviews-wrap{ max-width: 980px; margin: 0 auto; }
       .reviews-card{
@@ -250,7 +252,6 @@
         box-shadow:0 10px 28px rgba(0,0,0,.08);
       }
 
-      /* Stars look */
       .stars{
         font-size: 24px;
         letter-spacing: 3px;
@@ -263,10 +264,7 @@
 
       .review-text{ font-size: 1.05rem; margin: 0 0 12px 0; }
       .review-meta{ margin: 0; opacity: .85; }
-      .review-meta span{ margin-left: 10px; opacity: .8; }
-      /* .review-actions{ margin-top: 14px; display:flex; gap:12px; flex-wrap:wrap; } */
 
-      /* Fade applies to stars + text + meta */
       .review-text,
       .review-meta,
       .stars{
@@ -277,7 +275,6 @@
 
       .review-hidden{ opacity: 0; }
 
-      /* ===== CARD CTA BUTTON (matches hero nav style) ===== */
       .card-cta{
         display: inline-flex;
         align-items: center;
@@ -309,17 +306,14 @@
         display: block;
       }
 
-      /* ✅ keep real colors on card images */
       #team .w3-card img,
       #team .card-image img{
         filter: none !important;
       }
 
-
-      /* Logo overlay (flush to image/card edge) */
       .card-image{
-        position: relative;      /* anchor for logo */
-        overflow: hidden;        /* keeps everything inside */
+        position: relative;
+        overflow: hidden;
       }
 
       .card-image img:not(.card-logo){
@@ -327,21 +321,17 @@
         display: block;
       }
 
-      /* Logo sits EXACTLY on the top-right edge */
       .card-image .card-logo{
         position: absolute;
         top: 0;
         right: 0;
-
         width: 72px;
         height: 72px;
-
         object-fit: contain;
         border-radius: 50%;
         background: transparent;
         padding: 0;
         margin: 0;
-
         z-index: 5;
         filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
       }
@@ -355,18 +345,15 @@
         }
       }
 
-
       @media (max-width: 600px){
         .w3-card > img.card-logo{
           width: 56px;
           height: 56px;
-
-          top: 6px;      /* exact inner edge */
-          right: 6px;    /* exact inner edge */
+          top: 6px;
+          right: 6px;
         }
       }
-    
-      /* ===== FAQ GRID ===== */
+
       .faq-grid{
         max-width: 1100px;
         margin: 40px auto 0 auto;
@@ -395,35 +382,29 @@
         line-height: 1.6;
       }
 
-      /* Tablet */
       @media (max-width: 992px){
         .faq-grid{
           grid-template-columns: repeat(2, 1fr);
         }
       }
 
-      /* Mobile */
       @media (max-width: 600px){
         .faq-grid{
           grid-template-columns: 1fr;
         }
       }
-
     </style>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2893913946778603"
         crossorigin="anonymous">
     </script>
-
   </head>
 
-  <!-- Google Analytics (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CK5JQF6GR4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-CK5JQF6GR4');
   </script>
 
@@ -439,7 +420,6 @@
     </div>
     -->
 
-    <!-- TOP RIGHT HAMBURGER NAV -->
     <div class="top-nav" id="topNav">
       <div class="menu-toggle" onclick="toggleMenu()">☰</div>
       <div class="menu-dropdown" id="menuDropdown">
@@ -451,37 +431,69 @@
       </div>
     </div>
 
-
     <header class="bgimg-1 w3-display-container filter-me" id="home">
+      <div class="bg-layer bg-layer-1" id="bgLayer1"></div>
+      <div class="bg-layer bg-layer-2" id="bgLayer2"></div>
+
       <script>
-        const bgElement = document.querySelector(".bgimg-1");
-
-        const images = ["Assets/Tennis1.JPEG", "Assets/BespannService.JPEG"];
-        let currentIndex = 0;
-
-        const preloadImages = images.map((image) => {
-          const img = new Image();
-          img.src = image;
-          return img;
-        });
-
-        function toggleBackgroundImage() {
-          bgElement.style.transition = "background-image 1s ease-in-out";
-          bgElement.style.backgroundImage = `url("${images[currentIndex]}")`;
-          currentIndex = (currentIndex + 1) % images.length;
+        function getResponsiveImage(){
+          if (window.innerWidth <= 768){
+            return "Assets/StringingEzonexDone-v1.JPEG";
+          } else {
+            return "Assets/StringingEzonexDone-v2.JPEG";
+          }
         }
 
-        bgElement.style.backgroundImage = `url("${images[0]}")`;
-        toggleBackgroundImage();
+        const images = [
+          "Assets/Tennis1.JPEG",
+          getResponsiveImage()
+        ];
+
+        const layer1 = document.getElementById("bgLayer1");
+        const layer2 = document.getElementById("bgLayer2");
+
+        let currentIndex = 0;
+        let showingLayer1 = true;
+
+        images.forEach((image) => {
+          const img = new Image();
+          img.src = image;
+        });
+
+        layer1.style.backgroundImage = `url("${images[0]}")`;
+        layer2.style.backgroundImage = `url("${images[1]}")`;
+
+        function toggleBackgroundImage() {
+          const nextIndex = (currentIndex + 1) % images.length;
+
+          if (showingLayer1) {
+            layer2.style.backgroundImage = `url("${images[nextIndex]}")`;
+            layer2.style.opacity = "1";
+            layer1.style.opacity = "0";
+          } else {
+            layer1.style.backgroundImage = `url("${images[nextIndex]}")`;
+            layer1.style.opacity = "1";
+            layer2.style.opacity = "0";
+          }
+
+          showingLayer1 = !showingLayer1;
+          currentIndex = nextIndex;
+        }
+
         setInterval(toggleBackgroundImage, 4000);
       </script>
 
-      <div class="w3-display-left w3-text-white" style="padding:48px; text-shadow: 1px 0 10px black;">
+      <div class="w3-display-left w3-text-white" style="padding:48px;
+        text-shadow:
+          -2px -2px 4px rgba(0,0,0,.7),
+          2px -2px 4px rgba(0,0,0,.7),
+          -2px  2px 4px rgba(0,0,0,.7),
+          2px  2px 4px rgba(0,0,0,.7),
+          0px  0px 12px rgba(0,0,0,.8);">
         <span class="w3-jumbo w3-hide-small">
           <b>Tennisbesaitung München<br />Schlägerservice vom Profi-Tennistrainer</b>
         </span>
 
-        <!-- NAV BUTTONS -->
         <div class="hero-nav">
           <a href="#intro" class="nav-btn nav-btn-primary">Mehr erfahren</a>
 
@@ -493,8 +505,6 @@
             <i class="fa fa-map-marker fa-fw" style="margin-right:8px;"></i>
             Anfahrt
           </a>
-        </p>
-
         </div>
       </div>
     </header>
@@ -557,7 +567,7 @@
 
         <div class="w3-col l3 m6 w3-margin-bottom card-item">
           <div class="w3-card">
-            <img src="Assets/Tennis2.JPEG" alt="tennisCard" style="width:100%" />
+            <img src="Assets/StringingHeadDone.JPEG" alt="tennisCard" style="width:100%" />
             <div class="w3-container flex-container">
               <h3>Bespannservice für Tennis</h3>
               <p>
@@ -610,7 +620,7 @@
                 <li>und jede Spielstärke – von kompletten Anfängern bis zu ambitionierten Turnierspielern</li>
               </ul>
               </p>
-              <p class="flex-end"><a href="https://mehdis-tennis.webflow.io/" class="w3-button card-btn">Mehr erfahren</a></p>
+              <p class="flex-end"><a href="https://tennistraining.mehdi-tennistrainer.de/" target="_blank" class="w3-button card-btn">Mehr erfahren</a></p>
             </div>
           </div>
         </div>
