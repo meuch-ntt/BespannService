@@ -1071,9 +1071,48 @@
       animation: pulse 2.2s ease-in-out infinite;
     }
 
+
+
     @media screen and (max-width: 768px) {
       .sticky-cta-bar {
         display: flex;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        gap: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: rgba(17, 17, 17, 0.96);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.22);
+        overflow: hidden;
+      }
+
+      .sticky-cta-btn {
+        flex: 1 1 50%;
+        min-height: calc(58px + env(safe-area-inset-bottom));
+        padding: 16px 12px calc(16px + env(safe-area-inset-bottom));
+        border-radius: 0;
+        margin: 0;
+        font-size: 0.98rem;
+      }
+
+      .sticky-cta-secondary {
+        border: 0;
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow: none;
+      }
+
+      .sticky-cta-primary {
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .sticky-cta-primary::after {
+        display: none;
       }
 
       .hero-nav {
@@ -1081,28 +1120,17 @@
       }
 
       body {
-        padding-bottom: 104px;
+        padding-bottom: calc(74px + env(safe-area-inset-bottom));
       }
 
       #backToTop {
-        bottom: 108px;
+        right: 16px;
+        bottom: calc(84px + env(safe-area-inset-bottom));
       }
     }
 
-    @media screen and (max-width: 420px) {
-      .sticky-cta-bar {
-        left: 10px;
-        right: 10px;
-        gap: 8px;
-        padding: 8px;
-      }
 
-      .sticky-cta-btn {
-        min-height: 48px;
-        padding: 12px 10px;
-        font-size: 0.95rem;
-      }
-    }
+
 
     #backToTop.show {
       opacity: 1;
@@ -1118,6 +1146,15 @@
       pointer-events: none;
       transform: translateY(20px);
       transition: all 0.3s ease;
+    }
+
+    /*############################### STICKY CTA BAR (mobile) refined ############################# */
+    .sticky-cta-btn {
+      padding-bottom: calc(16px + env(safe-area-inset-bottom));
+    }
+
+    .sticky-cta-secondary {
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
     }
   </style>
 
@@ -1179,7 +1216,7 @@
           </a>
         </div>
 
-    
+
 
 
 
