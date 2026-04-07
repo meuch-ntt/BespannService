@@ -903,11 +903,228 @@
       padding: 24px 16px;
       /* less vertical whitespace */
     }
+
+    /* ############################ HERO SPLIT LAYER FIXES ############################# */
+    .nav-btn-arrow {
+      width: 52px;
+      height: 52px;
+      padding: 0;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      color: #fff;
+      border: 0;
+      background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+      box-shadow: var(--shadow-accent);
+
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .nav-btn-arrow:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: var(--shadow-accent-hover);
+    }
+
+    .nav-btn-arrow::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border: 2px solid rgba(46, 204, 113, 0.55);
+      border-radius: 50%;
+      opacity: 0;
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+
+    .nav-btn-arrow i {
+      font-size: 24px;
+      line-height: 1;
+      position: relative;
+      animation: arrowBounceDown 1.8s ease-in-out infinite;
+    }
+
+    @keyframes arrowBounceDown {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      30% {
+        transform: translateY(4px);
+      }
+
+      50% {
+        transform: translateY(7px);
+      }
+
+      70% {
+        transform: translateY(3px);
+      }
+    }
+
+    .hero-nav-arrow {
+      display: flex;
+      justify-content: center;
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+
+    .hero-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: nowrap;
+    }
+
+    @media screen and (max-width: 600px) {
+      .hero-nav {
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+
+      .hero-nav .nav-btn {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+
+
+    .sticky-cta-bar {
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: calc(16px + env(safe-area-inset-bottom));
+      z-index: 9998;
+
+      display: none;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 20px;
+
+      background: rgba(17, 17, 17, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    .sticky-cta-btn {
+      flex: 1 1 0;
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 14px 16px;
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+
+      border-radius: var(--radius-pill);
+      transition:
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast),
+        background var(--transition-fast),
+        border-color var(--transition-fast);
+    }
+
+    .sticky-cta-secondary {
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.10);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .sticky-cta-secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .sticky-cta-primary {
+      color: #fff;
+      border: 0;
+      background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+      box-shadow: var(--shadow-accent);
+      position: relative;
+    }
+
+    .sticky-cta-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-accent-hover);
+    }
+
+    .sticky-cta-primary::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border: 2px solid rgba(46, 204, 113, 0.45);
+      border-radius: var(--radius-pill);
+      opacity: 0;
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+
+    @media screen and (max-width: 768px) {
+      .sticky-cta-bar {
+        display: flex;
+      }
+
+      .hero-nav {
+        display: none;
+      }
+
+      body {
+        padding-bottom: 104px;
+      }
+
+      #backToTop {
+        bottom: 108px;
+      }
+    }
+
+    @media screen and (max-width: 420px) {
+      .sticky-cta-bar {
+        left: 10px;
+        right: 10px;
+        gap: 8px;
+        padding: 8px;
+      }
+
+      .sticky-cta-btn {
+        min-height: 48px;
+        padding: 12px 10px;
+        font-size: 0.95rem;
+      }
+    }
+
+    #backToTop.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    #backToTop {
+      transform: translateY(10px) scale(0.95);
+    }
+
+    .sticky-cta-bar {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+    }
   </style>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2893913946778603"
     crossorigin="anonymous">
     </script>
+
 </head>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CK5JQF6GR4"></script>
@@ -933,13 +1150,12 @@
   <div class="top-nav" id="topNav">
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <div class="menu-dropdown" id="menuDropdown">
-      <a href="#vorteile">Das zeichnet uns aus</a>
-      <a href="#angebote">Angebote</a>
       <a href="/tennis-besaitung/">Besaitungsservice & Preise</a>
       <a href="#reviews">Kundenfeedback</a>
+      <a href="#angebote">Angebote</a>
       <a href="#contact">Kontakt</a>
       <a href="#faq">FAQ</a>
-      <a href="/about-me/">Über Uns</a>
+      <a href="/about-us/">Über Uns</a>
     </div>
   </div>
 
@@ -957,19 +1173,16 @@
           Perfekt abgestimmt auf Deinen Spielstil.
         </p>
 
-        <div class="hero-nav">
-          <!-- <a href="#allgm-info" class="nav-btn nav-btn-tertiary">Mehr erfahren</a> -->
-
-          <a href="#angebote" class="nav-btn nav-btn-tertiary">Mehr erfahren</a>
-          <a href="/tennis-besaitung/" class="nav-btn nav-btn-tertiary">Besaitungsservice & Preise</a>
-
-          <a href="https://wa.me/+491794241063?text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20eine%20neue%20Bespannung%20ausmachen.%20Meine%20Verf%C3%BCgbarkeit%20w%C3%A4re%20(BITTE%20TERMINE%20VORSCHLAGEN)%3A%0A-%20...%0A-%20...%0A%0ABitte%20um%20kurze%20R%C3%BCckmeldung!%20"
-            class="nav-btn nav-btn-primary">
-            <i class="fa fa-whatsapp" style="margin-right:8px;"></i>
-            Jetzt Termin vereinbaren
+        <div class="hero-nav-arrow">
+          <a href="#vorteile" class="nav-btn nav-btn-arrow" aria-label="Nach unten scrollen">
+            <i class="fa fa-angle-down"></i>
           </a>
-
         </div>
+
+    
+
+
+
       </div>
     </div>
   </header>
@@ -1261,6 +1474,20 @@
     <i class="fa fa-chevron-up"></i>
   </button>
 
+  <div class="sticky-cta-bar" aria-label="Schnellaktionen">
+    <a href="/tennis-besaitung/" class="sticky-cta-btn sticky-cta-secondary">
+      <i class="fa fa-tag" style="margin-right:8px;"></i>
+      Preise
+    </a>
+
+    <a href="https://wa.me/+491794241063?text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20eine%20neue%20Bespannung%20ausmachen.%20Meine%20Verf%C3%BCgbarkeit%20w%C3%A4re%20(BITTE%20TERMINE%20VORSCHLAGEN)%3A%0A-%20...%0A-%20...%0A%0ABitte%20um%20kurze%20R%C3%BCckmeldung!%20"
+      class="sticky-cta-btn sticky-cta-secondary">
+      <i class="fa fa-whatsapp" style="margin-right:8px;"></i>
+      Termin vereinbaren
+    </a>
+  </div>
+
+
   <script>
     const reviews = [
       { text: "Mehdi ist sehr zuvorkommend und zuverlässig. Die Kommunikation verlief unkompliziert und reibungslos. Ich habe meinen Tennisschläger mit neuer Bespannung und inklusive neuem Griffband in kürzester Zeit wieder abholen können. Ich bin wirklich sehr zufrieden mit dem Service und der Beratung. Preis Leistung ist super! Sehr zu empfehlen!", author: "Franka", date: "Google Bewertung" },
@@ -1479,7 +1706,12 @@
     const backToTopBtn = document.getElementById("backToTop");
 
     window.addEventListener("scroll", () => {
-      if (window.scrollY > document.body.scrollHeight * 0.5 - window.innerHeight) {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+      const scrolledPercent = scrollTop / docHeight;
+
+      if (scrolledPercent > 0.7) {
         backToTopBtn.classList.add("show");
       } else {
         backToTopBtn.classList.remove("show");
@@ -1493,6 +1725,28 @@
       });
     });
   </script>
+
+  <!--  ########################### STICKY CTA BAR ############################# -->
+  <script>
+    const stickyBar = document.querySelector(".sticky-cta-bar");
+
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolledPercent = scrollTop / docHeight;
+
+      if (scrolledPercent > 0.1) {
+        stickyBar.style.opacity = "1";
+        stickyBar.style.pointerEvents = "auto";
+        stickyBar.style.transform = "translateY(0)";
+      } else {
+        stickyBar.style.opacity = "0";
+        stickyBar.style.pointerEvents = "none";
+        stickyBar.style.transform = "translateY(20px)";
+      }
+    });
+  </script>
+
 
 
 </body>
