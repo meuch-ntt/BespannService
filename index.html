@@ -1156,6 +1156,86 @@
     .sticky-cta-secondary {
       border-right: 1px solid rgba(255, 255, 255, 0.12);
     }
+
+
+
+
+    /*############################### DESKTOP CTA STACK (mobile) refined ############################# */
+
+    .desktop-cta-stack {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 9997;
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(16px);
+      transition: opacity 0.28s ease, transform 0.28s ease;
+    }
+
+    .desktop-cta-btn {
+      min-width: 180px;
+      min-height: 52px;
+      padding: 14px 18px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: var(--radius-pill);
+
+      transition:
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast),
+        background var(--transition-fast),
+        border-color var(--transition-fast);
+    }
+
+    .desktop-cta-secondary {
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(17, 17, 17, 0.78);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .desktop-cta-secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(17, 17, 17, 0.9);
+    }
+
+    .desktop-cta-primary {
+      color: #fff;
+      border: 0;
+      background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+      box-shadow: var(--shadow-accent);
+    }
+
+    .desktop-cta-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-accent-hover);
+    }
+
+    @media screen and (max-width: 768px) {
+      .desktop-cta-stack {
+        display: none;
+      }
+    }
+
+    /*############################### BACK TO TOP BUTTON (Desktop VIEW) refined ############################# */
+    @media screen and (min-width: 769px) {
+      #backToTop {
+        right: 24px;
+        bottom: 96px;
+      }
+    }
   </style>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2893913946778603"
@@ -1523,6 +1603,43 @@
       Termin vereinbaren
     </a>
   </div>
+
+
+  <div class="desktop-cta-stack" aria-label="Schnellaktionen Desktop">
+
+    <a href="https://wa.me/+491794241063?text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20eine%20neue%20Bespannung%20ausmachen.%20Meine%20Verf%C3%BCgbarkeit%20w%C3%A4re%20(BITTE%20TERMINE%20VORSCHLAGEN)%3A%0A-%20...%0A-%20...%0A%0ABitte%20um%20kurze%20R%C3%BCckmeldung!%20"
+      class="desktop-cta-btn desktop-cta-secondary">
+      <i class="fa fa-whatsapp" style="margin-right:8px;"></i>
+      Termin vereinbaren
+    </a>
+  </div>
+
+  <script>
+    const desktopCta = document.querySelector(".desktop-cta-stack");
+
+    function updateDesktopCta() {
+      if (!desktopCta) return;
+
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolledPercent = docHeight > 0 ? scrollTop / docHeight : 0;
+
+      if (window.innerWidth > 768 && scrolledPercent > 0.1) {
+        desktopCta.style.opacity = "1";
+        desktopCta.style.pointerEvents = "auto";
+        desktopCta.style.transform = "translateY(0)";
+      } else {
+        desktopCta.style.opacity = "0";
+        desktopCta.style.pointerEvents = "none";
+        desktopCta.style.transform = "translateY(16px)";
+      }
+    }
+
+    window.addEventListener("scroll", updateDesktopCta, { passive: true });
+    window.addEventListener("resize", updateDesktopCta);
+    updateDesktopCta();
+  </script>
+
 
 
   <script>
