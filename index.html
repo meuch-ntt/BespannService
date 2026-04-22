@@ -3,6 +3,11 @@
 
 <head>
   <title>Besaitung München</title>
+  <meta name="description"
+    content="Tennisbesaitung in München mit persönlicher Beratung zu Saite, Bespannungshärte und Spielstil. Präzise Besaitung, schneller Service und individuelle Empfehlungen vom Profi-Tennistrainer.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://mehdi-tennistrainer.de/">
   <link rel="icon" type="image/x-icon" href="/Assets/Bespannung.png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -634,68 +639,17 @@
       }
     }
 
-    /*--------------------------------------------------------------*/
-    /* Wissenswert switch right and left */
-    .qa-slider {
-      margin: 32px auto 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      max-width: 920px;
+    /* ############################# Mehr über Tennisbesaitung ############################# */
+    details summary {
+      cursor: pointer;
+      font-size: 1.05rem;
     }
 
-    .qa-card {
-      flex: 1;
-      min-height: 300px;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-lg);
-      padding: 28px 32px;
-      position: relative;
+    details[open] summary {
+      margin-bottom: 6px;
     }
 
-    .qa-counter {
-      display: inline-block;
-      margin-bottom: 14px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(46, 204, 113, 0.12);
-      color: var(--color-accent-dark);
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-
-    .qa-question {
-      margin: 0 0 14px;
-      font-size: clamp(1.25rem, 2vw, 1.7rem);
-      line-height: 1.3;
-      color: var(--color-text);
-    }
-
-    .qa-answer {
-      color: var(--color-text-soft);
-      line-height: 1.75;
-      font-size: 1.02rem;
-    }
-
-    .qa-answer p {
-      margin: 0 0 14px;
-    }
-
-    .qa-answer p:last-child {
-      margin-bottom: 0;
-    }
-
-    .qa-answer ul {
-      margin: 10px 0 0 0;
-      padding-left: 20px;
-    }
-
-    .qa-answer li {
-      margin-bottom: 8px;
-    }
+    /* ############################# restore design for right/ left to switch between kunden-feedback ############################# */
 
     .qa-arrow {
       flex: 0 0 52px;
@@ -715,36 +669,15 @@
     }
 
     .qa-arrow:hover {
-      transform: translateY(-2px) scale(1.03);
+      transform: none;
       box-shadow: var(--shadow-accent-hover);
     }
 
     .qa-arrow:active {
-      transform: scale(0.98);
-    }
-
-    .qa-fade {
-      opacity: 0;
-      transform: translateY(6px);
-      transition: opacity 0.22s ease, transform 0.22s ease;
-    }
-
-    .qa-show {
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity 0.22s ease, transform 0.22s ease;
+      transform: none;
     }
 
     @media screen and (max-width: 768px) {
-      .qa-slider {
-        gap: 10px;
-      }
-
-      .qa-card {
-        min-height: 340px;
-        padding: 22px 20px;
-      }
-
       .qa-arrow {
         width: 46px;
         height: 46px;
@@ -753,24 +686,6 @@
     }
 
     @media screen and (max-width: 600px) {
-      .qa-slider {
-        align-items: stretch;
-        gap: 8px;
-      }
-
-      .qa-card {
-        min-height: 380px;
-        padding: 20px 16px;
-      }
-
-      .qa-question {
-        font-size: 1.2rem;
-      }
-
-      .qa-answer {
-        font-size: 0.98rem;
-      }
-
       .qa-arrow {
         width: 42px;
         height: 42px;
@@ -778,6 +693,8 @@
         align-self: center;
       }
     }
+
+
 
     /* ############################# BACK TO TOP BUTTON ############################# */
     #backToTop {
@@ -850,6 +767,8 @@
       top: 50%;
       transform: translateY(-50%);
       z-index: 5;
+
+      will-change: transform;
     }
 
     #reviewPrev {
@@ -858,6 +777,10 @@
 
     #reviewNext {
       right: 0;
+    }
+
+    .qa-arrow {
+      transform: translateZ(0);
     }
 
     @media screen and (max-width: 600px) {
@@ -1236,6 +1159,13 @@
         bottom: 96px;
       }
     }
+
+    /*############################### hero under header ########################## */
+    .hero-copy {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      letter-spacing: 0.2px;
+    }
   </style>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2893913946778603"
@@ -1287,7 +1217,7 @@
         <h2 class="hero-title-sub">Schlägerservice vom Profi-Tennistrainer</h2>
 
         <p class="hero-copy">
-          Perfekt abgestimmt auf Deinen Spielstil.
+          Perfekt abgestimmt auf Deinen Spielstil. <br>Schnell, präzise und zuverlässig.
         </p>
 
         <div class="hero-nav-arrow">
@@ -1295,10 +1225,6 @@
             <i class="fa fa-angle-down"></i>
           </a>
         </div>
-
-
-
-
 
       </div>
     </div>
@@ -1541,31 +1467,98 @@
 
     </div>
   </div>
-
   <div class="w3-container w3-light-grey section-tight" id="allgm-info">
     <div class="article-section">
       <h2 class="w3-center">Mehr über Tennisbesaitung</h2>
 
       <p class="article-intro">
         Eine frische Bespannung sorgt nicht nur für mehr <strong>Kontrolle, Gefühl und Power</strong>,
-        sondern kann auch helfen, den Arm zu entlasten. Selbst wenn eine Saite nicht reißt,
+        sondern kann auch helfen, <b>den Arm zu entlasten</b>. Selbst wenn eine Saite nicht reißt,
         verliert sie mit der Zeit an Spannkraft, Elastizität und Rückmeldung.
+        Eine frische Bespannung bringt wieder <b>Stabilität und ein klares Spielgefühl</b> zurück.
       </p>
 
-      <div class="qa-slider" aria-label="Fragen und Antworten zur Tennisbesaitung">
-        <button class="qa-arrow" id="qaPrev" aria-label="Vorherige Frage">
-          <i class="fa fa-chevron-left"></i>
-        </button>
+      <div style="max-width:760px; margin:32px auto 0;">
 
-        <div class="qa-card">
-          <div class="qa-counter" id="qaCounter">1 / 3</div>
-          <h3 class="qa-question" id="qaQuestion"></h3>
-          <div class="qa-answer" id="qaAnswer"></div>
-        </div>
+        <!-- MOVED TO TOP -->
+        <details open
+          style="margin-bottom:12px; background:#fff; padding:18px 20px; border-radius:16px; box-shadow:0 8px 22px rgba(0,0,0,0.06);">
+          <summary><b>Wie oft sollte man die Saiten wechseln?</b></summary>
+          <p style="margin-top:12px;">
+            Eine pauschale Antwort gibt es nicht – entscheidend sind Spielhäufigkeit, Intensität und Saitentyp. Als
+            grobe Orientierung gilt:
+          </p>
+          <ul style="margin-top:8px; padding-left:20px; line-height:1.8;">
+            <li><b>Hobby-Spieler:</b> meist etwa 1–2 Mal pro Jahr</li>
+            <li><b>Regelmäßige Spieler:</b> oft alle 3–4 Monate sinnvoll</li>
+            <li><b>Mannschafts- und Turnierspieler:</b> je nach Belastung deutlich häufiger</li>
+          </ul>
+          <p>
+            Wichtig ist: Nicht erst auf einen Saitenriss warten. Schon vorher kann die Spannung so stark
+            nachlassen, dass Kontrolle, Komfort und Ballgefühl spürbar schlechter werden.
+          </p>
+        </details>
 
-        <button class="qa-arrow" id="qaNext" aria-label="Nächste Frage">
-          <i class="fa fa-chevron-right"></i>
-        </button>
+        <details
+          style="margin-bottom:12px; background:#fff; padding:18px 20px; border-radius:16px; box-shadow:0 8px 22px rgba(0,0,0,0.06);">
+          <summary><b>Warum regelmäßiges Besaiten wichtig ist</b></summary>
+          <p style="margin-top:12px;">
+            Auch wenn eine Tennissaite äußerlich noch intakt aussieht, verliert sie mit der Zeit an
+            Spannkraft, Elastizität und Rückmeldung. Dadurch verändert sich das Spielgefühl oft schleichend:
+            Bälle fliegen länger, die Kontrolle nimmt ab und präzise Schläge werden schwieriger.
+          </p>
+          <p>
+            Viele Spieler gewöhnen sich daran, ohne den Unterschied sofort zu bemerken. Erst nach einer
+            frischen Bespannung fällt auf, wie viel direkter, sauberer und kontrollierter sich der Schläger
+            wieder spielt.
+          </p>
+          <p>
+            Regelmäßiges Besaiten sorgt deshalb nicht nur für mehr Leistung, sondern auch für ein konstanteres
+            Spielgefühl. Das ist besonders wichtig, wenn du deine Technik verbessern oder dich auf Punktspiele
+            und Matches verlassen möchtest.
+          </p>
+        </details>
+
+        <details
+          style="margin-bottom:12px; background:#fff; padding:18px 20px; border-radius:16px; box-shadow:0 8px 22px rgba(0,0,0,0.06);">
+          <summary><b>Welche Saite passt zu welchem Spielstil?</b></summary>
+          <p style="margin-top:12px;">
+            Die richtige Saite hängt stark davon ab, wie du spielst und was dir auf dem Platz wichtig ist.
+            Spieler mit schnellen, kraftvollen Schlägen bevorzugen oft Saiten, die mehr Kontrolle und Spin
+            ermöglichen. Wer dagegen mehr Komfort sucht oder den Ball leichter beschleunigen möchte, profitiert
+            häufig von weicheren und elastischeren Saiten.
+          </p>
+          <p>
+            <b>Polyester-Saiten</b> sind vor allem bei fortgeschrittenen Spielern beliebt, weil sie ein
+            kontrolliertes Schlaggefühl und gute Spin-Eigenschaften bieten. <b>Multifilament-Saiten</b>
+            fühlen sich in der Regel komfortabler an, sind armschonender und eignen sich gut für Freizeitspieler
+            oder Spieler mit empfindlichem Arm.
+          </p>
+          <p>
+            Entscheidend ist aber nicht nur der Saitentyp allein. Auch Spielhäufigkeit, Schlagtechnik,
+            Schlägermodell und persönliche Vorlieben spielen eine Rolle. Deshalb lohnt sich eine individuelle
+            Abstimmung statt einer pauschalen Standardlösung.
+          </p>
+        </details>
+
+        <details
+          style="background:#fff; padding:18px 20px; border-radius:16px; box-shadow:0 8px 22px rgba(0,0,0,0.06);">
+          <summary><b>Welche Bespannungshärte ist optimal?</b></summary>
+          <p style="margin-top:12px;">
+            Neben der Saite selbst hat auch die Bespannungshärte einen großen Einfluss auf das Spielgefühl.
+            Eine niedrigere Härte sorgt meist für mehr Komfort, mehr Ballbeschleunigung und ein etwas weicheres
+            Feedback. Eine höhere Härte gibt oft mehr Kontrolle und ein direkteres, präziseres Gefühl beim Schlag.
+          </p>
+          <p>
+            Die optimale Einstellung hängt davon ab, was du suchst: mehr Power, mehr Kontrolle, mehr Komfort
+            oder ein ausgewogenes Mittelmaß. Auch die verwendete Saite und dein Schlägerkopf spielen dabei mit hinein.
+          </p>
+          <p>
+            Deshalb gibt es keine perfekte Zahl für alle Spieler. Eine gute Bespannung ist immer das Ergebnis
+            aus Spielstil, Material und persönlichem Empfinden.
+          </p>
+        </details>
+
       </div>
     </div>
   </div>
@@ -1607,11 +1600,19 @@
 
   <div class="desktop-cta-stack" aria-label="Schnellaktionen Desktop">
 
+    <!-- Preise -->
+    <a href="/tennis-besaitung/" class="desktop-cta-btn desktop-cta-secondary">
+      <i class="fa fa-tag" style="margin-right:8px;"></i>
+      Preise
+    </a>
+
+    <!-- WhatsApp -->
     <a href="https://wa.me/+491794241063?text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20eine%20neue%20Bespannung%20ausmachen.%20Meine%20Verf%C3%BCgbarkeit%20w%C3%A4re%20(BITTE%20TERMINE%20VORSCHLAGEN)%3A%0A-%20...%0A-%20...%0A%0ABitte%20um%20kurze%20R%C3%BCckmeldung!%20"
-      class="desktop-cta-btn desktop-cta-secondary">
+      class="desktop-cta-btn desktop-cta-secondary" target="_blank" rel="noopener">
       <i class="fa fa-whatsapp" style="margin-right:8px;"></i>
       Termin vereinbaren
     </a>
+
   </div>
 
   <script>
@@ -1752,107 +1753,6 @@
         topNavEl.style.display = "block";
       }
     });
-  </script>
-
-  <!-- Wissenswert switch right and left -->
-  <script>
-    const qaItems = [
-      {
-        question: "Warum regelmäßiges Besaiten wichtig ist",
-        answer: `
-          <p>
-            Mit sinkender Spannung verändert sich die Ballkontrolle. Der Ball fliegt oft höher
-            oder unpräziser, während das Schlaggefühl härter oder unklarer werden kann.
-          </p>
-          <p>
-            Wer regelmäßig spielt, profitiert deshalb von einer Bespannung, die zum eigenen Niveau,
-            zur gewünschten Kontrolle und zum persönlichen Komfort passt.
-          </p>
-        `
-      },
-      {
-        question: "Welche Saite passt zu welchem Spielstil?",
-        answer: `
-          <p>
-            Monofile Polyester-Saiten eignen sich häufig für Spieler, die viel Spin und Kontrolle suchen.
-            Multifilament-Saiten sind meist komfortabler und armschonender und werden oft von Freizeitspielern
-            oder sensiblen Spielern bevorzugt.
-          </p>
-          <p>
-            Welche Variante sinnvoll ist, hängt von Technik, Schlaghärte, Trainingshäufigkeit und
-            körperlichen Voraussetzungen ab.
-          </p>
-        `
-      },
-      {
-        question: "Wie oft sollte man die Saiten wechseln?",
-        answer: `
-          <p>
-            Eine pauschale Antwort gibt es nicht – entscheidend sind Spielhäufigkeit, Intensität und Saitentyp.
-            Als grobe Orientierung gilt:
-          </p>
-          <ul>
-            <li><strong>Hobby-Spieler:</strong> idealerweise 2-mal pro Jahr (am Saisonsbeginn)</li>
-            <li><strong>Regelmäßige Spieler:</strong> etwa alle 3 bis 4 Monate</li>
-            <li><strong>Mannschafts- und Turnierspieler:</strong> oft noch häufiger, je nach Belastung</li>
-          </ul>
-          <p>
-            Eine passende Kombination aus Saite, Härte und Spielstil macht im Tennis oft einen deutlich größeren
-            Unterschied, als viele zunächst vermuten.
-          </p>
-        `
-      }
-    ];
-
-    const qaQuestion = document.getElementById("qaQuestion");
-    const qaAnswer = document.getElementById("qaAnswer");
-    const qaCounter = document.getElementById("qaCounter");
-    const qaPrev = document.getElementById("qaPrev");
-    const qaNext = document.getElementById("qaNext");
-
-    let qaIndex = 0;
-
-    function renderQa(index) {
-      qaQuestion.classList.remove("qa-show");
-      qaAnswer.classList.remove("qa-show");
-      qaQuestion.classList.add("qa-fade");
-      qaAnswer.classList.add("qa-fade");
-
-      setTimeout(() => {
-        qaQuestion.textContent = qaItems[index].question;
-        qaAnswer.innerHTML = qaItems[index].answer;
-        qaCounter.textContent = `${index + 1} / ${qaItems.length}`;
-
-        qaQuestion.classList.remove("qa-fade");
-        qaAnswer.classList.remove("qa-fade");
-        qaQuestion.classList.add("qa-show");
-        qaAnswer.classList.add("qa-show");
-      }, 180);
-    }
-
-    qaPrev.addEventListener("click", () => {
-      qaIndex = (qaIndex - 1 + qaItems.length) % qaItems.length;
-      renderQa(qaIndex);
-    });
-
-    qaNext.addEventListener("click", () => {
-      qaIndex = (qaIndex + 1) % qaItems.length;
-      renderQa(qaIndex);
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowLeft") {
-        qaIndex = (qaIndex - 1 + qaItems.length) % qaItems.length;
-        renderQa(qaIndex);
-      }
-
-      if (e.key === "ArrowRight") {
-        qaIndex = (qaIndex + 1) % qaItems.length;
-        renderQa(qaIndex);
-      }
-    });
-
-    renderQa(qaIndex);
   </script>
 
 
