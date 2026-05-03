@@ -1093,7 +1093,7 @@
 
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 5px;
 
       opacity: 0;
       pointer-events: none;
@@ -1156,7 +1156,8 @@
     @media screen and (min-width: 769px) {
       #backToTop {
         right: 24px;
-        bottom: 96px;
+        bottom: calc(24px + 124px);
+        z-index: 10000;
       }
     }
 
